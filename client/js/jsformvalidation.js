@@ -108,7 +108,7 @@ const areAllFieldsValidToSend = async () => {
                 });
 
                 
-                const res = await fetch('http://localhost:5000/email', {
+                const res = await fetch('https://amalgichevdesign.onrender.com/email', {
                     method: 'POST',
                     body: JSON.stringify(formData),
                     headers: {
