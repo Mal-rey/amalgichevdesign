@@ -369,4 +369,7 @@ window.addEventListener('load', () => {
 
 
 /* -------------------------------------------- */
-
+// Reset the url back to main url after reload.
+if (window.location.hash) {
+    history.replaceState(null, null, window.location.pathname);
+};
