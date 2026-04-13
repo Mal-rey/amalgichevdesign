@@ -370,7 +370,7 @@ window.addEventListener('load', () => {
 
 /* -------------------------------------------- */
 // Reset the url back to main url after reload.
-const targetURL = "http://localhost:3000/";
+const targetURL = "amalgichevdesign.netlify.app";
 
 if (window.location.href !== targetURL) {
     window.location.replace(targetURL);
