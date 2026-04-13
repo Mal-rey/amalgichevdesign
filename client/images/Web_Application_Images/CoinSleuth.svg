@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="CoinIntelLogo" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1144 500">
+  <!-- Generator: Adobe Illustrator 30.1.0, SVG Export Plug-In . SVG Version: 2.1.1 Build 136)  -->
+  <defs>
+    <style>
+      .st0 {
+        fill: url(#linear-gradient2);
+      }
+
+      .st1 {
+        fill: #80475e;
+      }
+
+      .st2 {
+        fill: url(#linear-gradient9);
+      }
+
+      .st3 {
+        fill: url(#linear-gradient8);
+      }
+
+      .st4 {
+        font-size: 36.93px;
+      }
+
+      .st4, .st5, .st6 {
+        isolation: isolate;
+      }
+
+      .st4, .st6 {
+        fill: #542525;
+        font-family: Jost-Light, Jost;
+        font-weight: 300;
+      }
+
+      .st7 {
+        stroke: url(#linear-gradient);
+        stroke-linecap: round;
+      }
+
+      .st7, .st8 {
+        fill: none;
+        stroke-miterlimit: 10;
+        stroke-width: 8px;
+      }
+
+      .st9 {
+        fill: url(#linear-gradient7);
+      }
+
+      .st10 {
+        fill: url(#linear-gradient4);
+      }
+
+      .st6 {
+        font-size: 157px;
+        letter-spacing: .09em;
+      }
+
+      .st8 {
+        stroke: url(#linear-gradient1);
+      }
+
+      .st11 {
+        fill: #ffd972;
+      }
+
+      .st12 {
+        fill: url(#linear-gradient5);
+      }
+
+      .st13 {
+        fill: url(#linear-gradient3);
+      }
+
+      .st14 {
+        fill: url(#linear-gradient6);
+      }
+    </style>
+    <linearGradient id="linear-gradient" x1="264.21" y1="-37.57" x2="217.09" y2="9.57" gradientTransform="translate(0 236) scale(1 -1)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#80475e"/>
+      <stop offset="1" stop-color="#ffd972"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient1" x1="4889.34" y1="-155.38" x2="5052.59" y2="127.38" gradientTransform="translate(5092.77 236) rotate(-180)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#80475e"/>
+      <stop offset="1" stop-color="#ffd972"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient2" x1="171.52" y1="-6.16" x2="150.56" y2="14.82" gradientTransform="translate(0 236) scale(1 -1)" gradientUnits="userSpaceOnUse">
+      <stop offset=".3" stop-color="#80475e"/>
+      <stop offset="1" stop-color="#ffd972"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient3" x1="171.52" y1="-42.82" x2="150.56" y2="-21.84" gradientTransform="translate(0 236) scale(1 -1)" gradientUnits="userSpaceOnUse">
+      <stop offset=".3" stop-color="#80475e"/>
+      <stop offset="1" stop-color="#ffd972"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient4" x1="93.05" y1="-42.82" x2="72.09" y2="-21.84" gradientTransform="translate(0 236) scale(1 -1)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#80475e"/>
+      <stop offset=".76" stop-color="#ffd972"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient5" x1="93.05" y1="-6.16" x2="72.09" y2="14.82" gradientTransform="translate(0 236) scale(1 -1)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#80475e"/>
+      <stop offset=".76" stop-color="#ffd972"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient6" x1="125.03" y1="62.48" x2="197.07" y2="62.48" gradientTransform="translate(0 236) scale(1 -1)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#ffd972"/>
+      <stop offset="1" stop-color="#80475e"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient7" x1="160.16" y1="-58.07" x2="95.3" y2="6.8" gradientTransform="translate(0 236) scale(1 -1)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#80475e"/>
+      <stop offset="1" stop-color="#ffd972"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient8" x1="46.53" y1="-90.49" x2="118.57" y2="-90.49" gradientTransform="translate(0 236) scale(1 -1)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#ffd972"/>
+      <stop offset="1" stop-color="#80475e"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient9" x1="148.3" y1="-34.8" x2="83.44" y2="30.07" gradientTransform="translate(0 236) scale(1 -1)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#80475e"/>
+      <stop offset="1" stop-color="#ffd972"/>
+    </linearGradient>
+  </defs>
+  <g class="st5">
+    <g class="st5">
+      <g class="st5">
+        <text class="st6" transform="translate(259.74 302.69) rotate(-.03)"><tspan x="0" y="0">CoinSleuth</tspan></text>
+      </g>
+    </g>
+  </g>
+  <line class="st7" x1="240.65" y1="208.53" x2="240.65" y2="291.47"/>
+  <g class="st5">
+    <g class="st5">
+      <g class="st5">
+        <text class="st4" transform="translate(1083.06 207.19)"><tspan x="0" y="0">®</tspan></text>
+      </g>
+    </g>
+  </g>
+  <g>
+    <rect class="st8" x="31.39" y="120" width="180.83" height="260"/>
+    <circle class="st0" cx="161.04" cy="231.67" r="14.83"/>
+    <circle class="st13" cx="161.04" cy="268.33" r="14.83"/>
+    <circle class="st10" cx="82.57" cy="268.33" r="14.83"/>
+    <circle class="st12" cx="82.57" cy="231.67" r="14.83"/>
+    <path class="st14" d="M197.07,209.53l-44.98-.03-14.33-12.73h28.54l-41.27-41.27v-18l61.07,61.07s.05.04.07.07c0,0,.02,0,.03.02l10.87,10.87h0Z"/>
+    <polygon class="st9" points="127.73 326.5 127.73 196.77 140.46 209.5 140.46 209.5 140.46 313.77 127.73 326.5"/>
+    <path class="st11" d="M46.54,137.5h63c0,34.77-28.23,63-63,63h0v-63h0Z"/>
+    <path class="st3" d="M118.57,344.5v18l-61.07-61.07s-.05-.04-.07-.07c0,0-.02-.01-.03-.02l-10.87-10.87,44.98.03,14.33,12.73h-28.54s41.27,41.27,41.27,41.27Z"/>
+    <polygon class="st2" points="115.87 173.5 115.87 303.23 103.15 290.5 103.15 290.5 103.15 186.23 115.87 173.5"/>
+    <path class="st1" d="M197.06,362.5h-63c0-34.77,28.23-63,63-63h0v63h0Z"/>
+  </g>
+</svg>
