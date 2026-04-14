@@ -128,6 +128,7 @@ const areAllFieldsValidToSend = async () => {
                     formMessageErrorSpan.innerText = data.message;
                 }
             } catch (err) { 
+                formMessageErrorSpan.classList.remove('verifiedClass');
                 formMessageErrorSpan.classList.add('errorClass');
                 formMessageErrorSpan.innerText = 'Error Sending, Try Again!';
             }
