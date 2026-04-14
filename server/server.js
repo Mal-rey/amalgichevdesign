@@ -5,9 +5,7 @@ import cors from 'cors';
 import { Resend } from 'resend';
 
 const app = express();
-app.use(cors({
-  origin: 'https://amalgichevdesign.netlify.app'
-}));
+app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
@@ -33,7 +31,7 @@ app.post('/email', [
 
         // Email setup
         const data = await resend.emails.send({
-            from: 'onboarding@resend.dev',
+            from: 'Andrey Malgichev Design <onboarding@resend.dev>',
             to: process.env.MAIL_EMAIL,
             replyTo: Email,
             subject: Subject,
