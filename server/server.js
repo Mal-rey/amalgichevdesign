@@ -50,6 +50,7 @@ app.post('/email', [
         await transporter.sendMail(mailSetup);
         res.status(200).json({ message: 'Email Sent! Will Get Back To You' });
     } catch (err) {
+        console.error("err:", err);
         res.status(500).json({ message: 'Error Sending, Try Again!' });
     }
 
