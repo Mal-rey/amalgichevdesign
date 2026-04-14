@@ -31,7 +31,7 @@ app.post('/email', [
 
         // Email setup
         const data = await resend.emails.send({
-            from: 'Andrey Malgichev Design <onboarding@resend.dev>',
+            from: 'Andrey Malgichev Design <contact@amalgichevdesign.com>',
             to: process.env.MAIL_EMAIL,
             replyTo: Email,
             subject: Subject,
