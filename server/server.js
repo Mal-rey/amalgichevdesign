@@ -21,8 +21,7 @@ app.post('/email', [
     body('Email').isEmail().withMessage('This must be a valid email.'),
     body('Message').trim().notEmpty().withMessage('This must be a valid message.')
 ], async (req, res) => {
-    
-    console.log("🔥 EMAIL ROUTE HIT");
+
     // Validation errors
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
@@ -41,15 +40,12 @@ app.post('/email', [
             text: `${Message}`
         });
 
-        console.log("RESEND RESPONSE:", data);
 
-
-        return res.status(200).json({ 
+        res.status(200).json({ 
             message: 'Email Sent! Will Get Back To You',
             data, });
     } catch (err) {
-        console.error("err:", err);
-        res.status(500).json({ message: err.message, error: err });
+        res.status(500).json({ message: 'Error Sending, Try Again!' });
     }
 
 })
