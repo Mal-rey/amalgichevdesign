@@ -36,7 +36,7 @@ app.post('/email', [
             from: 'onboarding@resend.dev',
             to: 'amalgichev12@gmail.com',
             subject: Subject,
-            html: '<p>Congrats on sending your <strong>first email</strong>!</p>'
+            text: Message
         });
 
 
