@@ -33,7 +33,7 @@ app.post('/email', [
 
         // Email setup
         const data = await resend.emails.send({
-            from: `amalgichevdesign <${process.env.MAIL_EMAIL}>`,
+            from: 'amalgichevdesign <amalgichev12@gmail.com>',
             replyTo: Email,
             to: process.env.MAIL_EMAIL,
             subject: `${Subject}`,
