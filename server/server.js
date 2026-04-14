@@ -46,7 +46,7 @@ app.post('/email', [
             data, });
     } catch (err) {
         console.error("err:", err);
-        res.status(500).json({ message: 'Error Sending, Try Again!' });
+        res.status(500).json({ message: err.message, error: err });
     }
 
 })
