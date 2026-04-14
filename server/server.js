@@ -40,6 +40,8 @@ app.post('/email', [
             text: `${Message}`
         });
 
+        console.log("RESEND RESPONSE:", data);
+
 
         return res.status(200).json({ 
             message: 'Email Sent! Will Get Back To You',
