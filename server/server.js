@@ -33,11 +33,10 @@ app.post('/email', [
 
         // Email setup
         const data = await resend.emails.send({
-            from: 'amalgichevdesign <amalgichev12@gmail.com>',
-            replyTo: Email,
-            to: process.env.MAIL_EMAIL,
-            subject: `${Subject}`,
-            text: `${Message}`
+            from: 'onboarding@resend.dev',
+            to: 'amalgichev12@gmail.com',
+            subject: 'Hello World',
+            html: '<p>Congrats on sending your <strong>first email</strong>!</p>'
         });
 
 
