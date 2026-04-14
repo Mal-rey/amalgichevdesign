@@ -34,7 +34,8 @@ app.post('/email', [
         // Email setup
         const data = await resend.emails.send({
             from: 'onboarding@resend.dev',
-            to: 'amalgichev12@gmail.com',
+            to: Email,
+            replyTo: Email,
             subject: Subject,
             text: Message
         });
