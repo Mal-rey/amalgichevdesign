@@ -101,11 +101,11 @@ const areAllFieldsValidToSend = async () => {
 
             try {
 
-                const formData = ({
+                const formData = {
                     Subject: subject.value,
                     Email: email.value,
                     Message: message.value
-                });
+                };
 
                 
                 const res = await fetch('https://amalgichevdesign.onrender.com/email', {
@@ -128,7 +128,6 @@ const areAllFieldsValidToSend = async () => {
                     formMessageErrorSpan.innerText = data.message;
                 }
             } catch (err) { 
-                // This CATCH block was missing!
                 formMessageErrorSpan.classList.add('errorClass');
                 formMessageErrorSpan.innerText = 'Error Sending, Try Again!';
             }
