@@ -21,7 +21,8 @@ app.post('/email', [
     body('Email').isEmail().withMessage('This must be a valid email.'),
     body('Message').trim().notEmpty().withMessage('This must be a valid message.')
 ], async (req, res) => {
-
+    
+    console.log("🔥 EMAIL ROUTE HIT");
     // Validation errors
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
