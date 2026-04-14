@@ -14,12 +14,13 @@ app.use(express.urlencoded({ extended: true }));
 // Nodemailer Setup
 const transporter = nodemailer.createTransport({
     service: 'gmail',
+    host: "smtp.gmail.com",
+    port: 587,
+    secure: false,
     auth: {
         user: process.env.MAIL_EMAIL,
         pass: process.env.GENERATED_PASSWORD
-    },
-    port: 587,
-    secure: false
+    }
 });
 
 // Form Submission Route
