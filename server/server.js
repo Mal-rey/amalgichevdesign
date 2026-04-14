@@ -5,7 +5,9 @@ import cors from 'cors';
 import nodemailer from 'nodemailer';
 
 const app = express();
-app.use(cors());
+app.use(cors({
+  origin: 'https://amalgichevdesign.netlify.app'
+}));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
