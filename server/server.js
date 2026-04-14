@@ -7,6 +7,7 @@ import nodemailer from 'nodemailer';
 const app = express();
 app.use(cors());
 app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
 // Nodemailer Setup
 const transporter = nodemailer.createTransport({
