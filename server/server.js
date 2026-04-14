@@ -33,7 +33,7 @@ app.post('/email', [
 
         // Email setup
         const data = await resend.emails.send({
-            from: "amalgichevdesign <https://amalgichevdesign.netlify.app>",
+            from: `amalgichevdesign <${process.env.MAIL_EMAIL}>`,
             replyTo: Email,
             to: process.env.MAIL_EMAIL,
             subject: `${Subject}`,
