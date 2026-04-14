@@ -2,7 +2,7 @@ import 'dotenv/config';
 import express from 'express';
 import { body, validationResult } from 'express-validator';
 import cors from 'cors';
-import nodemailer from 'nodemailer';
+import { Resend } from 'resend';
 
 const app = express();
 app.use(cors({
@@ -11,17 +11,9 @@ app.use(cors({
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// Nodemailer Setup
-const transporter = nodemailer.createTransport({
-    service: 'gmail',
-    host: "smtp.gmail.com",
-    port: 587,
-    secure: false,
-    auth: {
-        user: process.env.MAIL_EMAIL,
-        pass: process.env.GENERATED_PASSWORD
-    }
-});
+// Resender Setup
+const resend = new Resend(process.env.RESEND_API_KEY);
+
 
 // Form Submission Route
 app.post('/email', [
@@ -36,22 +28,22 @@ app.post('/email', [
         console.log(errors);
         return res.status(400).json({ errors: errors.array() });
     }
-
-    const { Subject, Email, Message } = req.body;
-
-    // Email setup
-    const mailSetup = {
-        from: Email,
-        replyTo: Email,
-        to: process.env.MAIL_EMAIL,
-        subject: `${Subject}`,
-        text: `${Message}`
-    };
-
-    // This will be used to send the email
     try {
-        await transporter.sendMail(mailSetup);
-        res.status(200).json({ message: 'Email Sent! Will Get Back To You' });
+        const { Subject, Email, Message } = req.body;
+
+        // Email setup
+        const data = await resend.emails.send({
+            from: "amalgichevdesign <https://amalgichevdesign.netlify.app>",
+            replyTo: Email,
+            to: process.env.MAIL_EMAIL,
+            subject: `${Subject}`,
+            text: `${Message}`
+        });
+
+
+        return res.status(200).json({ 
+            message: 'Email Sent! Will Get Back To You',
+            data, });
     } catch (err) {
         console.error("err:", err);
         res.status(500).json({ message: 'Error Sending, Try Again!' });
