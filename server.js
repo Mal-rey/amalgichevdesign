@@ -33,18 +33,22 @@ app.post('/email', [
 
         // Email setup
         const data = await resend.emails.send({
-            from: "amalgichevdesign <https://amalgichevdesign.netlify.app>",
+            from: 'amalgichevdesign <amalgichev12@gmail.com>',
             replyTo: Email,
             to: process.env.MAIL_EMAIL,
             subject: `${Subject}`,
             text: `${Message}`
         });
 
+        console.log("RESEND RESPONSE:", data);
 
-        res.status(200).json({ message: 'Email Sent! Will Get Back To You' });
+
+        return res.status(200).json({ 
+            message: 'Email Sent! Will Get Back To You',
+            data, });
     } catch (err) {
         console.error("err:", err);
-        res.status(500).json({ message: 'Error Sending, Try Again!' });
+        res.status(500).json({ message: err.message, error: err });
     }
 
 })
