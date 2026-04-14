@@ -34,8 +34,6 @@ app.post('/email', [
 
     const { Subject, Email, Message } = req.body;
 
-    console.log(body);
-
     // Email setup
     const mailSetup = {
         from: Email,
