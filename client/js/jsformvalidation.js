@@ -16,6 +16,9 @@ contactForm.noValidate = true;
 // Remove CSS classes that would be used alongside the HTML validators'
 contactForm.classList.remove('validate');
 
+// Checks if sending
+let isSending = false;
+
 // If any of the input is wrong, run this.
 const showError = (input, errorMessage) => {
     switch(input.id) {
@@ -137,12 +140,18 @@ const areAllFieldsValidToSend = async () => {
       
 
 // See if the form has been submitted.
-contactForm.addEventListener('submit', (e) => {
+contactForm.addEventListener('submit', async (e) => {
     e.preventDefault();
+
+    if(isSending) return;
+    isSending = true;
 
     formMessageErrorSpan.classList.remove('verifiedClass');
 
     checkAllFields([subject, email, message]);
     isEmailValid(email);
-    areAllFieldsValidToSend();
+
+    await areAllFieldsValidToSend();
+
+    isSending = false;
 })
