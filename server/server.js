@@ -17,7 +17,9 @@ const transporter = nodemailer.createTransport({
     auth: {
         user: process.env.MAIL_EMAIL,
         pass: process.env.GENERATED_PASSWORD
-    }
+    },
+    port: 587,
+    secure: false
 });
 
 // Form Submission Route
