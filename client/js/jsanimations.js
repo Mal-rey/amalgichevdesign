@@ -275,7 +275,7 @@ const experienceContent = document.querySelectorAll('.experienceFlexItem');
 
 // Animate them so that when they reach a certain point on the page, they become fully visible instead of opaque.
 const showContent = (sectionContent) => {
-    const trigger = window.innerHeight - 350;
+    const trigger = window.innerHeight / 2;
 
     sectionContent.forEach(content => {
         const contentTop = content.getBoundingClientRect().top;
