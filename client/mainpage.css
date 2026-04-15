@@ -1699,6 +1699,20 @@ header {
 			width: 280px;
 		}
 
+		#experienceTopContent .sectionHeaderText,
+		#skillsTopContent .sectionHeaderText,
+		#projectsTopContent .sectionHeaderText,
+		#contactsTopContent .sectionHeaderText {
+			font-size: 16px;
+		}
+
+		#experienceTopContent .sectionIntroText,
+		#skillsTopContent .sectionIntroText,
+		#projectsTopContent .sectionIntroText,
+		#contactsTopContent .sectionIntroText {
+			font-size: 18.5px;
+		}
+
 		.sectionContentText {
 			width: 300px;
 		}
