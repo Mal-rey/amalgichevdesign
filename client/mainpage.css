@@ -1376,7 +1376,7 @@ header {
 
 		.projectsItemSizing {
 			width: 629px;
-			height: 402px;
+			height: 395px;
 			border: 8px solid transparent;
 			padding-top: 20px; 
 		}
@@ -1676,7 +1676,7 @@ header {
 		}
 }
 
-@media only screen and (max-width: 550px) {
+@media only screen and (max-width: 479px) {
 		/* Navbar */
 
 		#navMobileMenu {
