@@ -325,6 +325,7 @@ nav {
 .buttonConstSize {
 	position: absolute;
 	z-index: 3;
+	font-size: 17px;
 }
 
 
@@ -1477,6 +1478,10 @@ header {
 		
 		.mobileContentDivBreakpointLonger {
 			border-width: 2px;
+		}
+
+		.buttonConstSize {
+			font-size: 12px;
 		}
 
 		/* Header */
