@@ -1,1 +1,0 @@
-export const BACKEND_LINK = 'https://amalgichevdesign.onrender.com/email';
