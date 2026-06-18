@@ -30,7 +30,7 @@ app.post('/email', [
         const { Subject, Email, Message } = req.body;
 
         // Email setup
-        const data = await resend.emails.send({
+        const { data, error } = await resend.emails.send({
             from: 'Andrey Malgichev Design <contact@amalgichevdesign.com>',
             to: process.env.MAIL_EMAIL,
             replyTo: Email,
@@ -38,12 +38,16 @@ app.post('/email', [
             text: Message
         });
 
-
-        res.status(200).json({ 
+        if (error) {
+           return res.status(400).json({  
+                message: 'Error Sending, Try Again!',
+            });
+        }
+        return res.status(200).json({ 
             message: 'Email Sent! Will Get Back To You',
             data, });
     } catch (err) {
-        res.status(500).json({ message: 'Error Sending, Try Again!' });
+        return res.status(500).json({ message: 'Error Sending, Try Again!' });
     }
 
 })
