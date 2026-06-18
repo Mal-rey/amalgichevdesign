@@ -17,7 +17,7 @@ const mobileSizeLowestSize = window.matchMedia('(max-width: 479px)');
 function onWindowResize(camera, renderer, container) {
 	camera.aspect = container.clientWidth / container.clientHeight;
 	renderer.setSize(container.clientWidth, container.clientHeight);
-	renderer.setPixelRatio(Math.min(window.devicePixelRatio, 1.5));
+	renderer.setPixelRatio(1);
 	camera.updateProjectionMatrix();
 };
 
@@ -365,7 +365,7 @@ const createScene = (sceneId) => {
     camera.updateProjectionMatrix();
     camera.position.z = 3;
     const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true, powerPreference: 'high-performance' });
-    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 1.5));
+    renderer.setPixelRatio(1);
     renderer.setSize(container.clientWidth, container.clientHeight);
     renderer.setClearColor(0xffffff, 1);
     
@@ -911,11 +911,11 @@ const Scene = async(sceneId) => {
 
                         // Rotate the stars in starsSecondUse and constantly move the texture on them.
                         starsSecondUse.forEach((star, idx) => {
-                            star.starMovingTexture.offset.x += 0.01;
+                            star.starMovingTexture.offset.x += 0.0001;
                             if (idx >= starsSecondUse.length / 2) {
-                                star.mesh.rotation.z -= 0.03;
+                                star.mesh.rotation.z -= 0.0003;
                             } else {
-                                star.mesh.rotation.z += 0.03;
+                                star.mesh.rotation.z += 0.0003;
                             };
                         });
 
@@ -1023,11 +1023,11 @@ const Scene = async(sceneId) => {
 
                         switch(idx) {
                             case 0:
-                                capsulesSecondScreen[idx].mesh.rotation.y -= 0.03;
+                                capsulesSecondScreen[idx].mesh.rotation.y -= 0.0003;
 
                                 break;
                             case 1:
-                                capsulesSecondScreen[idx].mesh.rotation.y += 0.03;
+                                capsulesSecondScreen[idx].mesh.rotation.y += 0.0003;
 
                                 break;
                         };
@@ -1039,25 +1039,25 @@ const Scene = async(sceneId) => {
 
                         switch(idx) {
                             case 0:
-                                capsuleBallsSecondScreen[idx].mesh.rotation.y -= 0.03;
-                                capsuleBallsSecondScreen[idx].mesh.rotation.z -= 0.03;
+                                capsuleBallsSecondScreen[idx].mesh.rotation.y -= 0.0003;
+                                capsuleBallsSecondScreen[idx].mesh.rotation.z -= 0.0003;
 
                                 break;
                             case 1:
-                                capsuleBallsSecondScreen[idx].mesh.rotation.y += 0.03;
-                                capsuleBallsSecondScreen[idx].mesh.rotation.z += 0.03;
+                                capsuleBallsSecondScreen[idx].mesh.rotation.y += 0.0003;
+                                capsuleBallsSecondScreen[idx].mesh.rotation.z += 0.0003;
 
                                 break;
                             case 2:
-                                capsuleBallsSecondScreen[idx].mesh.rotation.x -= 0.03;
-                                capsuleBallsSecondScreen[idx].mesh.rotation.y -= 0.03;
-                                capsuleBallsSecondScreen[idx].mesh.rotation.z -= 0.03;
+                                capsuleBallsSecondScreen[idx].mesh.rotation.x -= 0.0003;
+                                capsuleBallsSecondScreen[idx].mesh.rotation.y -= 0.0003;
+                                capsuleBallsSecondScreen[idx].mesh.rotation.z -= 0.0003;
 
                                 break;
                             case 3:
-                                capsuleBallsSecondScreen[idx].mesh.rotation.x += 0.03;
-                                capsuleBallsSecondScreen[idx].mesh.rotation.y += 0.03;
-                                capsuleBallsSecondScreen[idx].mesh.rotation.z += 0.03;
+                                capsuleBallsSecondScreen[idx].mesh.rotation.x += 0.0003;
+                                capsuleBallsSecondScreen[idx].mesh.rotation.y += 0.0003;
+                                capsuleBallsSecondScreen[idx].mesh.rotation.z += 0.0003;
 
                                 break;
                         };
@@ -1353,8 +1353,8 @@ const Scene = async(sceneId) => {
 
                 
                 // Capsule rotations.
-                    capsuleThirdScreen.mesh.rotation.y -= 0.03;
-               
+                    capsuleThirdScreen.mesh.rotation.y -= 0.0003;
+                console.log(renderer.info.memory);
                 
                 
                 
