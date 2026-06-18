@@ -368,6 +368,7 @@ const createScene = (sceneId) => {
     renderer.setPixelRatio(1);
     renderer.setSize(container.clientWidth, container.clientHeight);
     renderer.setClearColor(0xffffff, 1);
+    const clock = new THREE.Clock();
     
     container.appendChild(renderer.domElement);
 
@@ -397,6 +398,7 @@ const createScene = (sceneId) => {
         scene, 
         camera, 
         renderer, 
+        clock,
         ambientLight, 
         directionalLight,
         isVisible: () => isVisible
@@ -424,9 +426,7 @@ let lastTime;
 const Scene = async(sceneId) => {
 
     // Run the scene setup from our createScene function.
-	const { container, scene, camera, renderer, ambientLight, directionalLight, isVisible } = createScene(sceneId);
-
-    // Check to see if the container is in view on the screen to see if we will render it.
+	const { container, scene, camera, renderer, clock, ambientLight, directionalLight, isVisible } = createScene(sceneId);
 
     // Check what div is being targeted, as each one requires different animations.
     switch(sceneId) {
@@ -519,15 +519,17 @@ const Scene = async(sceneId) => {
 	        };  
 
             // Control the manual animation frames here.
-	        const animationFrames = (current, target, speed) => {
+	        const animationFrames = (current, target, speed, delta) => {
+                const deltaSpeed = speed * delta;
+
 	            if (speed === 0) return target;
-		        if (current < target) return Math.min(current + speed, target);
-	            if (current > target) return Math.max(current - speed, target);
+		        if (current < target) return Math.min(current + deltaSpeed, target);
+	            if (current > target) return Math.max(current - deltaSpeed, target);
 		        return current;
 	        };
             
             // Function that handles all the manual animation coordinate changes.
-            const manualAnimationChange = (modelPhases, classArray, animationPhase, phaseToCheckIfFinal) => {
+            const manualAnimationChange = (modelPhases, classArray, animationPhase, phaseToCheckIfFinal, delta) => {
                 if(modelPhases === capsuleMachinePhases) {
                     const AnimationsPhase = modelPhases.phases[modelPhases.phase];
                     if (AnimationsPhase) {
@@ -537,7 +539,8 @@ const Scene = async(sceneId) => {
 			            (
 			            classArray.mesh.scale.y, 
 			            AnimationsPhase.scaleY, 
-			            AnimationsPhase.scaleSpeedY
+			            AnimationsPhase.scaleSpeedY,
+                        delta
 			            );
 
 			            // Handle any rotation animations on z axis.
@@ -545,7 +548,8 @@ const Scene = async(sceneId) => {
 			            (
 			            classArray.mesh.rotation.z, 
 			            AnimationsPhase.rotationZ, 
-			            AnimationsPhase.rotationSpeedZ
+			            AnimationsPhase.rotationSpeedZ,
+                        delta
 			            );
 
 			            // Handle any position animations on y axis.
@@ -553,7 +557,8 @@ const Scene = async(sceneId) => {
 			            (
 			            classArray.mesh.position.y, 
 			            AnimationsPhase.positionY, 
-			            AnimationsPhase.positionSpeedY
+			            AnimationsPhase.positionSpeedY,
+                        delta
 			            );
 
 			            // Make sure all scalings match targets before going on to/incrementing to next phase. 
@@ -584,21 +589,24 @@ const Scene = async(sceneId) => {
                             (
 					        camera.position.x,
 					        AnimationsPhase.positionX,
-					        AnimationsPhase.positionSpeedX
+					        AnimationsPhase.positionSpeedX,
+                            delta
 				            );
 
 				            camera.position.y = animationFrames
                             (
 					        camera.position.y,
 					        AnimationsPhase.positionY,
-					        AnimationsPhase.positionSpeedY
+					        AnimationsPhase.positionSpeedY,
+                            delta
 				            );
 
 				            camera.position.z = animationFrames
                             (
 					        camera.position.z,
 					        AnimationsPhase.positionZ,
-					        AnimationsPhase.positionSpeedZ
+					        AnimationsPhase.positionSpeedZ,
+                            delta
 				            );
 
 				            // Handle all rotation animations.
@@ -606,21 +614,24 @@ const Scene = async(sceneId) => {
                             (
 					        camera.rotation.x,
 					        AnimationsPhase.rotationX,
-					        AnimationsPhase.rotationSpeedX
+					        AnimationsPhase.rotationSpeedX,
+                            delta
 				            );
 
 				            camera.rotation.y = animationFrames
                             (
 					        camera.rotation.y,
 					        AnimationsPhase.rotationY,
-					        AnimationsPhase.rotationSpeedY
+					        AnimationsPhase.rotationSpeedY,
+                            delta
 				            );
 
 				            camera.rotation.z = animationFrames
                             (
 					        camera.rotation.z,
 					        AnimationsPhase.rotationZ,
-					        AnimationsPhase.rotationSpeedZ
+					        AnimationsPhase.rotationSpeedZ,
+                            delta
 				            );
 				
 				
@@ -654,17 +665,20 @@ const Scene = async(sceneId) => {
                                 (
 						        meshIdx.mesh.scale.x,
 						        AnimationsPhase.scaleXYZ,
-						        AnimationsPhase.scaleSpeedXYZ
+						        AnimationsPhase.scaleSpeedXYZ,
+                                delta
 					            ),
 					            animationFrames(
 						        meshIdx.mesh.scale.y,
 						        AnimationsPhase.scaleXYZ, 
-						        AnimationsPhase.scaleSpeedXYZ
+						        AnimationsPhase.scaleSpeedXYZ,
+                                delta
 					            ),
 					            animationFrames(
 						        meshIdx.mesh.scale.z,
 						        AnimationsPhase.scaleXYZ,
-						        AnimationsPhase.scaleSpeedXYZ
+						        AnimationsPhase.scaleSpeedXYZ,
+                                delta
 					            ),
 				            );
 
@@ -673,21 +687,24 @@ const Scene = async(sceneId) => {
                             (
 					        meshIdx.mesh.position.x,
 					        AnimationsPhase.positionX,
-					        AnimationsPhase.positionSpeedX
+					        AnimationsPhase.positionSpeedX,
+                            delta
 				            );
 
 				            meshIdx.mesh.position.y = animationFrames
                             (
 					        meshIdx.mesh.position.y,
 					        AnimationsPhase.positionY,
-					        AnimationsPhase.positionSpeedY
+					        AnimationsPhase.positionSpeedY,
+                            delta
 				            );
 
 				            meshIdx.mesh.position.z = animationFrames
                             (
 					        meshIdx.mesh.position.z,
 					        AnimationsPhase.positionZ,
-					        AnimationsPhase.positionSpeedZ
+					        AnimationsPhase.positionSpeedZ,
+                            delta
 				            );
 
 				            // Handle all rotation animations.
@@ -695,21 +712,24 @@ const Scene = async(sceneId) => {
                             (
 					        meshIdx.mesh.rotation.x,
 					        AnimationsPhase.rotationX,
-					        AnimationsPhase.rotationSpeedX
+					        AnimationsPhase.rotationSpeedX,
+                            delta
 				            );
 
 				            meshIdx.mesh.rotation.y = animationFrames
                             (
 					        meshIdx.mesh.rotation.y,
 					        AnimationsPhase.rotationY,
-					        AnimationsPhase.rotationSpeedY
+					        AnimationsPhase.rotationSpeedY,
+                            delta
 				            );
 
 				            meshIdx.mesh.rotation.z = animationFrames
                             (
 					        meshIdx.mesh.rotation.z,
 					        AnimationsPhase.rotationZ,
-					        AnimationsPhase.rotationSpeedZ
+					        AnimationsPhase.rotationSpeedZ,
+                            delta
 				            );
 				
 				
@@ -727,7 +747,8 @@ const Scene = async(sceneId) => {
 						                child.material.opacity = animationFrames(
 							            child.material.opacity,
 							            AnimationsPhase.opacity,
-							            AnimationsPhase.opacitySpeed
+							            AnimationsPhase.opacitySpeed,
+                                        delta
 						                );
 					                };
                                 });
@@ -819,6 +840,9 @@ const Scene = async(sceneId) => {
                     animationFrameFirst = requestAnimationFrame(animate);
                     return;
                 };
+
+                // Create our time-based code for animations.
+                const delta = clock.getDelta();
                 
                 
 
@@ -836,8 +860,8 @@ const Scene = async(sceneId) => {
                         if(!overallAnimationPhases.secondManualAnimation.capsuleMachineAnimationFinish 
                         || !overallAnimationPhases.secondManualAnimation.starsAnimationFinish) {
                             // Animate the manual intro animation for the capsule machine and stars.
-                            manualAnimationChange(capsuleMachinePhases, machine, overallAnimationPhases.secondManualAnimation, 'capsuleMachineAnimationFinish');
-                            manualAnimationChange(starsPhases, stars, overallAnimationPhases.secondManualAnimation, 'starsAnimationFinish');
+                            manualAnimationChange(capsuleMachinePhases, machine, overallAnimationPhases.secondManualAnimation, 'capsuleMachineAnimationFinish', delta);
+                            manualAnimationChange(starsPhases, stars, overallAnimationPhases.secondManualAnimation, 'starsAnimationFinish', delta);
                             
                         } else {
                             // Delete the star object array.
@@ -855,7 +879,7 @@ const Scene = async(sceneId) => {
                            || !overallAnimationPhases.thirdCameraCapsuleBallsAndStarsAnimation.capsulesLoadedFinish
                            || !overallAnimationPhases.thirdCameraCapsuleBallsAndStarsAnimation.starsPopInFinish) {
                             // Animate the manual camera animation.
-                            manualAnimationChange(cameraPhases, camera, overallAnimationPhases.thirdCameraCapsuleBallsAndStarsAnimation, 'cameraAnimationFinish');
+                            manualAnimationChange(cameraPhases, camera, overallAnimationPhases.thirdCameraCapsuleBallsAndStarsAnimation, 'cameraAnimationFinish', delta);
 
                             // Check if the camera animation phase is on the second phase so that we can add a new empty capsule machine and capsules and balls one time.
                             if(cameraPhases.phase === 1 && !overallAnimationPhases.thirdCameraCapsuleBallsAndStarsAnimation.supplementaryLoading1) {
@@ -880,13 +904,13 @@ const Scene = async(sceneId) => {
                             // Now, we need to do the animations that require them to be re-run in the animation loop (not run one time like in the statement above).
                             if (overallAnimationPhases.thirdCameraCapsuleBallsAndStarsAnimation.supplementaryLoading1) {
                                 // Now, position everything.
-                                manualAnimationChange(capsulesPhases, capsules, overallAnimationPhases.thirdCameraCapsuleBallsAndStarsAnimation, 'capsulesLoadedFinish');
+                                manualAnimationChange(capsulesPhases, capsules, overallAnimationPhases.thirdCameraCapsuleBallsAndStarsAnimation, 'capsulesLoadedFinish', delta);
                                 capsules.forEach((capsule) => {
                                     capsule.setPositionForAll();
                                 });
                                 emptyMachine.setPositionForAll();
                                 // Position the second set of stars into our scene.
-                                manualAnimationChange(starsSecondUsePhases, starsSecondUse, overallAnimationPhases.thirdCameraCapsuleBallsAndStarsAnimation, 'starsPopInFinish');
+                                manualAnimationChange(starsSecondUsePhases, starsSecondUse, overallAnimationPhases.thirdCameraCapsuleBallsAndStarsAnimation, 'starsPopInFinish', delta);
                             };
 
                         } else {
@@ -911,11 +935,11 @@ const Scene = async(sceneId) => {
 
                         // Rotate the stars in starsSecondUse and constantly move the texture on them.
                         starsSecondUse.forEach((star, idx) => {
-                            star.starMovingTexture.offset.x += 0.009;
+                            star.starMovingTexture.offset.x += 0.9 * delta;
                             if (idx >= starsSecondUse.length / 2) {
-                                star.mesh.rotation.z -= 0.009;
+                                star.mesh.rotation.z -= 0.9 * delta;
                             } else {
-                                star.mesh.rotation.z += 0.009;
+                                star.mesh.rotation.z += 0.9 * delta;
                             };
                         });
 
@@ -932,7 +956,7 @@ const Scene = async(sceneId) => {
                         if (!overallAnimationPhases.fourthShakeStarsRotateAnimation.secondCameraAnimationFinish) {
                             // Animate the camera again if it is on desktop.
                             if (!mobileSize.matches) {
-                                manualAnimationChange(cameraPhasesSecond, camera, overallAnimationPhases.fourthShakeStarsRotateAnimation, 'secondCameraAnimationFinish');
+                                manualAnimationChange(cameraPhasesSecond, camera, overallAnimationPhases.fourthShakeStarsRotateAnimation, 'secondCameraAnimationFinish', delta);
                             } else {
                             // Bypass the second camera part if not on desktop size
                             overallAnimationPhases.fourthShakeStarsRotateAnimation.secondCameraAnimationFinish = true;
@@ -1015,19 +1039,22 @@ const Scene = async(sceneId) => {
                     return;
                 };
 
+                // Create our time-based code for animations.
+                const delta = clock.getDelta();
 
 
+                
                 
                 // Capsules rotations.
                     capsulesSecondScreen.forEach((capsule, idx) => {
 
                         switch(idx) {
                             case 0:
-                                capsulesSecondScreen[idx].mesh.rotation.y -= 0.009;
+                                capsulesSecondScreen[idx].mesh.rotation.y -= 0.9 * delta;
 
                                 break;
                             case 1:
-                                capsulesSecondScreen[idx].mesh.rotation.y += 0.009;
+                                capsulesSecondScreen[idx].mesh.rotation.y += 0.9 * delta;
 
                                 break;
                         };
@@ -1039,25 +1066,25 @@ const Scene = async(sceneId) => {
 
                         switch(idx) {
                             case 0:
-                                capsuleBallsSecondScreen[idx].mesh.rotation.y -= 0.009;
-                                capsuleBallsSecondScreen[idx].mesh.rotation.z -= 0.009;
+                                capsuleBallsSecondScreen[idx].mesh.rotation.y -= 0.9 * delta;
+                                capsuleBallsSecondScreen[idx].mesh.rotation.z -= 0.9 * delta;
 
                                 break;
                             case 1:
-                                capsuleBallsSecondScreen[idx].mesh.rotation.y += 0.009;
-                                capsuleBallsSecondScreen[idx].mesh.rotation.z += 0.009;
+                                capsuleBallsSecondScreen[idx].mesh.rotation.y += 0.9 * delta;
+                                capsuleBallsSecondScreen[idx].mesh.rotation.z += 0.9 * delta;
 
                                 break;
                             case 2:
-                                capsuleBallsSecondScreen[idx].mesh.rotation.x -= 0.009;
-                                capsuleBallsSecondScreen[idx].mesh.rotation.y -= 0.009;
-                                capsuleBallsSecondScreen[idx].mesh.rotation.z -= 0.009;
+                                capsuleBallsSecondScreen[idx].mesh.rotation.x -= 0.9 * delta;
+                                capsuleBallsSecondScreen[idx].mesh.rotation.y -= 0.9 * delta;
+                                capsuleBallsSecondScreen[idx].mesh.rotation.z -= 0.9 * delta;
 
                                 break;
                             case 3:
-                                capsuleBallsSecondScreen[idx].mesh.rotation.x += 0.009;
-                                capsuleBallsSecondScreen[idx].mesh.rotation.y += 0.009;
-                                capsuleBallsSecondScreen[idx].mesh.rotation.z += 0.009;
+                                capsuleBallsSecondScreen[idx].mesh.rotation.x += 0.9 * delta;
+                                capsuleBallsSecondScreen[idx].mesh.rotation.y += 0.9 * delta;
+                                capsuleBallsSecondScreen[idx].mesh.rotation.z += 0.9 * delta;
 
                                 break;
                         };
@@ -1305,7 +1332,7 @@ const Scene = async(sceneId) => {
     
     
 
-
+                
                 // Renderer for scene.
 		        renderer.render(scene, camera);
 
@@ -1349,12 +1376,15 @@ const Scene = async(sceneId) => {
                     return;
                 };
 
+                // Create our time-based code for animations.
+                const delta = clock.getDelta();
 
 
                 
+                
                 // Capsule rotations.
-                    capsuleThirdScreen.mesh.rotation.y -= 0.009;
-                console.log(renderer.info.memory);
+                    capsuleThirdScreen.mesh.rotation.y -= 0.9 * delta;
+    
                 
                 
                 
