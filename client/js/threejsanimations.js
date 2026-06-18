@@ -911,11 +911,11 @@ const Scene = async(sceneId) => {
 
                         // Rotate the stars in starsSecondUse and constantly move the texture on them.
                         starsSecondUse.forEach((star, idx) => {
-                            star.starMovingTexture.offset.x += 0.001;
+                            star.starMovingTexture.offset.x += 0.009;
                             if (idx >= starsSecondUse.length / 2) {
-                                star.mesh.rotation.z -= 0.003;
+                                star.mesh.rotation.z -= 0.009;
                             } else {
-                                star.mesh.rotation.z += 0.003;
+                                star.mesh.rotation.z += 0.009;
                             };
                         });
 
@@ -1023,11 +1023,11 @@ const Scene = async(sceneId) => {
 
                         switch(idx) {
                             case 0:
-                                capsulesSecondScreen[idx].mesh.rotation.y -= 0.003;
+                                capsulesSecondScreen[idx].mesh.rotation.y -= 0.009;
 
                                 break;
                             case 1:
-                                capsulesSecondScreen[idx].mesh.rotation.y += 0.003;
+                                capsulesSecondScreen[idx].mesh.rotation.y += 0.009;
 
                                 break;
                         };
@@ -1039,25 +1039,25 @@ const Scene = async(sceneId) => {
 
                         switch(idx) {
                             case 0:
-                                capsuleBallsSecondScreen[idx].mesh.rotation.y -= 0.003;
-                                capsuleBallsSecondScreen[idx].mesh.rotation.z -= 0.003;
+                                capsuleBallsSecondScreen[idx].mesh.rotation.y -= 0.009;
+                                capsuleBallsSecondScreen[idx].mesh.rotation.z -= 0.009;
 
                                 break;
                             case 1:
-                                capsuleBallsSecondScreen[idx].mesh.rotation.y += 0.003;
-                                capsuleBallsSecondScreen[idx].mesh.rotation.z += 0.003;
+                                capsuleBallsSecondScreen[idx].mesh.rotation.y += 0.009;
+                                capsuleBallsSecondScreen[idx].mesh.rotation.z += 0.009;
 
                                 break;
                             case 2:
-                                capsuleBallsSecondScreen[idx].mesh.rotation.x -= 0.003;
-                                capsuleBallsSecondScreen[idx].mesh.rotation.y -= 0.003;
-                                capsuleBallsSecondScreen[idx].mesh.rotation.z -= 0.003;
+                                capsuleBallsSecondScreen[idx].mesh.rotation.x -= 0.009;
+                                capsuleBallsSecondScreen[idx].mesh.rotation.y -= 0.009;
+                                capsuleBallsSecondScreen[idx].mesh.rotation.z -= 0.009;
 
                                 break;
                             case 3:
-                                capsuleBallsSecondScreen[idx].mesh.rotation.x += 0.003;
-                                capsuleBallsSecondScreen[idx].mesh.rotation.y += 0.003;
-                                capsuleBallsSecondScreen[idx].mesh.rotation.z += 0.003;
+                                capsuleBallsSecondScreen[idx].mesh.rotation.x += 0.009;
+                                capsuleBallsSecondScreen[idx].mesh.rotation.y += 0.009;
+                                capsuleBallsSecondScreen[idx].mesh.rotation.z += 0.009;
 
                                 break;
                         };
@@ -1353,7 +1353,7 @@ const Scene = async(sceneId) => {
 
                 
                 // Capsule rotations.
-                    capsuleThirdScreen.mesh.rotation.y -= 0.003;
+                    capsuleThirdScreen.mesh.rotation.y -= 0.009;
                 console.log(renderer.info.memory);
                 
                 
