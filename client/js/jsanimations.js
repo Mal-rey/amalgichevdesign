@@ -30,20 +30,9 @@ const homeButton = document.getElementById('homeButton');
 const menuButtons = document.querySelectorAll('.topNavButton');
 
 // Animated both sliding in once the page loads.
-document.addEventListener('DOMContentLoaded', () => {
-    homeButton.classList.add('loaded');
-    menuButtons.forEach(async (button, idx) => {
+homeButton.classList.add('loaded');
+menuButtons.forEach((button) => {
         button.classList.add('loaded');
-    })
-});
-
-window.addEventListener("pageshow", (event) => {
-    if (event.persisted) {
-        homeButton.classList.add('loaded');
-        menuButtons.forEach(async (button, idx) => {
-        button.classList.add('loaded');
-    })
-    }
 });
 
 
@@ -56,15 +45,7 @@ window.addEventListener("pageshow", (event) => {
 const navPageMobile = document.getElementById('navPageMobile');
 
 // Make our mobile navbar appear.
-document.addEventListener('DOMContentLoaded', () => {
-    navPageMobile.classList.add('loaded');
-});
-
-window.addEventListener("pageshow", (event) => {
-    if (event.persisted) {
-        navPageMobile.classList.add('loaded');
-    }
-});
+navPageMobile.classList.add('loaded');
 
 // Get the sandwich button, the second navbar, it's opaque screen cover, mobile menu buttons, and the exit button.
 const navSandwich = document.getElementById('navSandwich');
@@ -108,8 +89,9 @@ mobileMenuExitButton.addEventListener('click', () => {
 // Get the gradientColor element itself.
 const animatedColor = document.getElementById('animatedColor');
 
-// Get the intro element itself to do an opacity transition.
+// Get the intro element and the header transparent div itself to do an opacity transition.
 const intro = document.getElementById('intro');
+const headerTransparentArea = document.getElementById('headerTransparentArea');
 
 // Titles that will be shown and animated.
 const headerTitlesAnimationWords = [
@@ -123,21 +105,15 @@ const headerTitlesAnimationWords = [
 wordCycle = 0;
 
 // Make our intro appear.
-document.addEventListener('DOMContentLoaded', async () => {
+const loadIntro = async () => {
     intro.classList.add('loaded');
+    headerTransparentArea.classList.add('loaded');
     await document.fonts.ready;
     await delay(250);
     runHeader();
-});
+};
 
-window.addEventListener("pageshow", async (event) => {
-    if (event.persisted) {
-        intro.classList.add('loaded');
-        await document.fonts.ready;
-        await delay(250);
-        runHeader();
-    }
-});
+loadIntro();
 
 // Remove current word out when we start the website.
 const headerSpanHasLettersRemoval = async () => {
@@ -242,7 +218,7 @@ const getOriginalImage = () => {
 };
 
 const mobileScroll = () => {
-    const triggerMobile = window.innerHeight - 500;
+    const triggerMobile = window.innerHeight - 300;
     const aboutImageHoverSectionTop = aboutImageHoverSection.getBoundingClientRect().top;
 
         if (aboutImageHoverSectionTop < triggerMobile) {

@@ -23,16 +23,16 @@
 
 <nav id="navPageDesktop">
     <ul id="navPageButton">
-        <li><a id="homeButton" href="index.html"></a></li>
-        <li><a href="#about" class="topNavButton"><h1 class="buttonConstSize">About</h1></a></li>
-        <li><a href="#experience" class="topNavButton"><h1 class="buttonConstSize">Experience</h1></a></li>
-        <li><a href="#skills" class="topNavButton"><h1 class="buttonConstSize">Skills</h1></a></li>
-        <li><a href="#projects" class="topNavButton"><h1 class="buttonConstSize">Projects</h1></a></li>
-        <li><a href="#contacts" class="topNavButton"><h1 class="buttonConstSize">Contacts</h1></a></li>
+        <li><a id="homeButton" class="loaded" href="index.html"></a></li>
+        <li><a href="#about" class="topNavButton loaded"><h1 class="buttonConstSize">About</h1></a></li>
+        <li><a href="#experience" class="topNavButton loaded"><h1 class="buttonConstSize">Experience</h1></a></li>
+        <li><a href="#skills" class="topNavButton loaded"><h1 class="buttonConstSize">Skills</h1></a></li>
+        <li><a href="#projects" class="topNavButton loaded"><h1 class="buttonConstSize">Projects</h1></a></li>
+        <li><a href="#contacts" class="topNavButton loaded"><h1 class="buttonConstSize">Contacts</h1></a></li>
     </ul>
 </nav> 
 
-<nav id="navPageMobile">
+<nav id="navPageMobile" class="loaded">
     <ul id="navMobile">
         <li><a id="homeButtonMobile" href="index.html"></a></li>
         <li>
@@ -78,10 +78,10 @@
 
 <!-- Header -->
 
-<header id="threejsIntro">
-    <div id="headerTransparentArea"></div>
+<header id="three.jsIntro">
+    <div id="headerTransparentArea" class="loaded"></div>
     <div id="frontPageInteraction">
-        <div id="intro">
+        <div id="intro" class="loaded">
             <h1 class="gradientColor">Hello,</h1>
             <h1 class="gradientColor">I Am Known As</h1>
             <h1 id="animatedColor">Andrey Malgichev</h1>
@@ -93,26 +93,24 @@
 
 <!-- About -->
 
-<section id="aboutTopContent"> 
-    <div class="contentSpacing" id="threejsSecond">
-        <div class="middleContentSizing">
-            <div id="aboutImageHover">
-                <div id="about">
-                    <div id="aboutImage">
-                        <div class="aboutImageImage currentImage" style="--var-image: url('images/Web_Development_Software_Images/HTML5_logo.svg')"></div>
-                        <div class="aboutImageImage" style="--var-image: url('images/Web_Development_Software_Images/CSS3_logo.svg')"></div>
-                        <div class="aboutImageImage" style="--var-image: url('images/Web_Development_Software_Images/JavaScript_logo.svg')"></div>
-                        <div class="aboutImageImage" style="--var-image: url('images/Web_Development_Software_Images/Tailwind CSS_logo.svg')"></div>
-                        <div class="aboutImageImage" style="--var-image: url('images/Web_Development_Software_Images/React_logo.svg')"></div>
-                    </div>
-                    <div class="sectionIntroTextLayout">
-                        <h1 class="sectionHeaderText">About</h1>
-                        <h1 class="sectionIntroText">Good Things Come In Tall Packages</h1>
-                    </div>
+<section id="about"> 
+    <div class="contentSpacing">
+        <div id="aboutImageHover" class="middleContentSizing">
+            <div id="aboutTopContent">
+                <div id="aboutImage">
+                    <div class="aboutImageImage currentImage" style="--var-image: url('images/Web_Development_Software_Images/HTML5_logo.svg')"></div>
+                    <div class="aboutImageImage" style="--var-image: url('images/Web_Development_Software_Images/CSS3_logo.svg')"></div>
+                    <div class="aboutImageImage" style="--var-image: url('images/Web_Development_Software_Images/JavaScript_logo.svg')"></div>
+                    <div class="aboutImageImage" style="--var-image: url('images/Web_Development_Software_Images/Tailwind CSS_logo.svg')"></div>
+                    <div class="aboutImageImage" style="--var-image: url('images/Web_Development_Software_Images/React_logo.svg')"></div>
                 </div>
-                <div class="contentDivBreakpoint"></div>   
-                <p class="sectionContentText">As a tall artist by heart and front-end developer by brain, I think design and technology are important in not only presenting brand's image, but in also creating a functional and clean visual aesthetic for the user of a web application to enjoy.</p>
+                <div class="sectionIntroTextLayout">
+                    <h1 class="sectionHeaderText">About</h1>
+                    <h1 class="sectionIntroText">Good Things Come In Tall Packages</h1>
+                </div>
             </div>
+            <div class="contentDivBreakpoint"></div>   
+            <p class="sectionContentText">As a tall artist by heart and front-end developer by brain, I think design and technology are important in not only presenting brand's image, but in also creating a functional and clean visual aesthetic for the user of a web application to enjoy.</p>
         </div>
     </div>
 </section>
@@ -136,7 +134,7 @@
                     <div id="experienceSliderAnimation"></div>    
                 </div>
                 <div id="experienceBottomContent">
-                    <div class="experienceFlexItem">
+                    <div class="experienceFlexItem contentLoaded">
                         <img class="experienceFlexImage" src="images/Institution_Images/Central_Connecticut_State_University_logo.png" alt="Central Connecticut State University" />
                         <div class="experienceFlexItemContent">
                             <p>Central Connecticut State University</p>
@@ -151,7 +149,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="experienceFlexItem">
+                    <div class="experienceFlexItem contentLoaded">
                         <img class="experienceFlexImage" src="images/Institution_Images/BestLogic_Staffing_logo.png" alt="BestLogic Staffing" />
                         <div class="experienceFlexItemContent">
                             <p>BestLogic Staffing</p>
@@ -166,7 +164,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="experienceFlexItem">
+                    <div class="experienceFlexItem contentLoaded">
                         <img class="experienceFlexImage" src="images/Institution_Images/Aspire_Digital_Solutions_logo.png" alt="Aspire Digital Solutions" />
                         <div class="experienceFlexItemContent">
                             <p>Aspire Digital Solutions</p>
@@ -180,7 +178,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="experienceFlexItem">
+                    <div class="experienceFlexItem contentLoaded">
                         <img class="experienceFlexImage" src="images/Institution_Images/Stop_&_Shop_logo.png" alt="Stop & Shop" />
                         <div class="experienceFlexItemContent">
                             <p>Stop & Shop</p>
@@ -217,7 +215,7 @@
             <div class="alignBottomContent">
                 <div id="skillsBottomContent">
                     <div id="skillsSoftwareGrid"> 
-                        <div class="skillsSoftwareItemSizing">
+                        <div class="skillsSoftwareItemSizing contentLoaded">
                             <div class="skillsSoftwareItemBorder"></div>
                             <div class="skillsSoftwareItemTopContent">
                                 <h2 class="skillsSoftwareItemTopHeader">UI For The Win</h2>
@@ -240,7 +238,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="skillsSoftwareItemSizing">
+                        <div class="skillsSoftwareItemSizing contentLoaded">
                             <div class="skillsSoftwareItemBorder"></div>
                             <div class="skillsSoftwareItemTopContent">
                                 <h2 class="skillsSoftwareItemTopHeader">Servers Keep Things Running</h2>
@@ -262,7 +260,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="skillsSoftwareItemSizing">
+                        <div class="skillsSoftwareItemSizing contentLoaded">
                             <div class="skillsSoftwareItemBorder"></div>
                             <div class="skillsSoftwareItemTopContent">
                                 <h2 class="skillsSoftwareItemTopHeader">Quality Graphics Matter</h2>
@@ -307,7 +305,7 @@
             <div class="contentDivBreakpointLonger"></div>
             <div class="alignBottomContent">
                 <div class="projectsBottomContent">
-                    <div class="projectsItemSizing">
+                    <div class="projectsItemSizing contentLoaded noJS">
                         <div class="projectsIntroSection">
                             <img class="projectsProjectImage" src="images/Web_Application_Images/amalgichevdesign.svg" alt="amalgichevdesign" />
                             <div class="contentDivBreakpointProjects"></div>
@@ -335,13 +333,13 @@
                             <a href="https://amalgichevdesign.com/" target="_blank" class="projectsButtons">Live Site</a>
                             <a href="https://github.com/Mal-rey/amalgichevdesign/" target="_blank" class="projectsButtons">GitHub Repo</a>
                         </div>
-                        <div class="projectsImageGrid">
-                            <img class="projectsImage" src="images/Web_Application_Images/projectPlaceholder.jpg"/>
-                            <img class="projectsImage" src="images/Web_Application_Images/projectPlaceholder.jpg"/>
+                        <div class="projectsImageGrid noJS">
+                            <img class="projectsImage" src="images/projectPlaceholder.svg"/>
+                            <img class="projectsImage" src="images/projectPlaceholder.svg"/>
                         </div>
-                        <button class="projectArrow"></button>
+                        <button class="projectArrow noJS"></button>
                    </div>
-                   <div class="projectsItemSizing">
+                   <div class="projectsItemSizing contentLoaded noJS">
                         <div class="projectsIntroSection">
                             <img class="projectsProjectImage" src="images/Web_Application_Images/CoinSleuth.svg" alt="Thavalon_Reborn_+" />
                             <div class="contentDivBreakpointProjects"></div>
@@ -369,13 +367,13 @@
                             <a href="#" target="_blank" class="projectsButtons">Live Site</a>
                             <a href="#" target="_blank" class="projectsButtons">GitHub Repo</a>
                         </div>
-                        <div class="projectsImageGrid">
-                            <img class="projectsImage" src="images/Web_Application_Images/projectPlaceholder.jpg"/>
-                            <img class="projectsImage" src="images/Web_Application_Images/projectPlaceholder.jpg"/>
+                        <div class="projectsImageGrid noJS">
+                            <img class="projectsImage" src="images/projectPlaceholder.svg"/>
+                            <img class="projectsImage" src="images/projectPlaceholder.svg"/>
                         </div>
-                        <button class="projectArrow"></button>
+                        <button class="projectArrow noJS"></button>
                    </div>
-                   <div class="projectsItemSizing">
+                   <div class="projectsItemSizing contentLoaded noJS">
                         <div class="projectsIntroSection">
                             <img class="projectsProjectImage" src="images/Web_Application_Images/CoinSleuth.svg" alt="CoinSleuth" />
                             <div class="contentDivBreakpointProjects"></div>
@@ -405,20 +403,20 @@
                             <a href="#" target="_blank" class="projectsButtons">Live Site</a>
                             <a href="#" target="_blank" class="projectsButtons">GitHub Repo</a>
                         </div>
-                        <div class="projectsImageGrid">
-                            <img class="projectsImage" src="images/Web_Application_Images/projectPlaceholder.jpg"/>
-                            <img class="projectsImage" src="images/Web_Application_Images/projectPlaceholder.jpg"/>
+                        <div class="projectsImageGrid noJS">
+                            <img class="projectsImage" src="images/projectPlaceholder.svg"/>
+                            <img class="projectsImage" src="images/projectPlaceholder.svg"/>
                         </div>
-                        <button class="projectArrow"></button>
+                        <button class="projectArrow noJS"></button>
                     </div>
-                    <!--<div class="projectsItemSizing">
+                    <!--<div class="projectsItemSizing contentLoaded noJS">
                         <div class="projectsIntroSection">
-                            <img class="projectsProjectImage" src="images/Web_Application_Images/Breaker.svg" alt="Breaker" />
+                            <img class="projectsProjectImage" src="images/Web_Application_Images/CoinSleuth.svg" alt="CoinSleuth" />
                             <div class="contentDivBreakpointProjects"></div>
                             <div class="projectsProjectIntro">
                                 <div class="projectNameAndLogo">
-                                    <img class="projectsSoftwareItemTechImageIntro" src="images/Web_Application_Images/Breaker-Logo.svg" alt="Breaker_Logo" />
-                                    <h1 class="projectsProjectItemContent">Breaker</h1>
+                                    <img class="projectsSoftwareItemTechImageIntro" src="images/Web_Application_Images/CoinSleuth-Logo.svg" alt="CoinSleuth_Logo" />
+                                    <h1 class="projectsProjectItemContent">CoinSleuth</h1>
                                 </div>
                                 <div class="projectsProjectStackContent">
                                     <div style="--var-image: url('images/Web_Development_Software_Images/HTML5_logo.svg')" class="projectsSoftwareItemTechImage"></div>
@@ -444,11 +442,11 @@
                         <a href="#" target="_blank" class="projectsButtons">Live Site</a>
                         <a href="#" target="_blank" class="projectsButtons">GitHub Repo</a>
                         </div>
-                        <div class="projectsImageGrid">
-                            <img class="projectsImage" src="images/Web_Application_Images/projectPlaceholder.jpg"/>
-                            <img class="projectsImage" src="images/Web_Application_Images/projectPlaceholder.jpg"/>
+                        <div class="projectsImageGrid noJS">
+                            <img class="projectsImage" src="images/projectPlaceholder.svg"/>
+                            <img class="projectsImage" src="images/projectPlaceholder.svg"/>
                         </div>
-                        <button class="projectArrow"></button>
+                        <button class="projectArrow noJS"></button>
                     </div>-->
                 </div>
             </div>
@@ -501,7 +499,6 @@
                             </div>
                         </form>
                     </div>
-                    <div id="threejsThird"></div>
                 </div>
                 <div id="contactsButtonsContent">
                     <a href="https://www.linkedin.com/in/am-97as/" target="_blank"><img class="contactsImage" src="images/Contact_Link_Images/LinkedIn_logo.svg" alt="LinkedIn" /></a>
@@ -516,25 +513,20 @@
 
 <!-- JavaScript Scripts -->
 
-<script>
-    history.scrollRestoration = "manual"
-    document.body.style.overflowY = 'hidden';
-</script>
+<script>history.scrollRestoration = "manual"</script>
 <script type="importmap">
     {
       "imports": {
         "three": "https://cdn.jsdelivr.net/npm/three@0.172.0/build/three.module.js",
         "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.172.0/examples/jsm/",
-        "cannon-es": "https://cdn.jsdelivr.net/npm/cannon-es@0.20.0/dist/cannon-es.js"
+        "cannon-es": "https://cdn.jsdelivr.net/npm/cannon-es@0.20.0/dist/cannon-es.js",
+        "cannon-es-debugger": "https://cdn.jsdelivr.net/npm/cannon-es-debugger@1.0.0/dist/cannon-es-debugger.js"
       }
     }
 </script>
 <script type="module" src="js/threejsanimations.js"></script>
+<script src="js/jsanimations.js"></script>
 <script type="module" src="js/jsformvalidation.js"></script>
-<noscript>
-  <meta http-equiv="refresh" content="0; url=/no-js-index.html">
-</noscript>
-
 
 
 

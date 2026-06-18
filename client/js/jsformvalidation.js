@@ -1,6 +1,6 @@
 /* -------------------------------------------- */
 /* Contact Form Validation */
-
+import { BACKEND_LINK } from '../config.js'
 // Get contact form, the subject, email and message input areas and their respective error spans.
 const contactForm = document.getElementById('contactsFormDiv');
 const subject = document.getElementById('subject');
@@ -13,7 +13,7 @@ const formMessageErrorSpan = document.getElementById('contactFormInput_NoMessage
 // Remove HTML validators (since if this JavaScript file loads, it will validate over this)
 contactForm.noValidate = true;
 
-// Remove CSS classes that would be used alongside the HTML validators'
+// Remove CSS classes that would be used alongside the HTML validators.
 contactForm.classList.remove('validate');
 
 // Checks if sending
@@ -35,7 +35,7 @@ const showError = (input, errorMessage) => {
             email.classList.add('error');
             break;
         case 'message':
-            formEmailErrorSpan.classList.remove('verifiedClass');
+            formMessageErrorSpan.classList.remove('verifiedClass');
             formMessageErrorSpan.innerText = errorMessage;
             formMessageErrorSpan.classList.add('errorClass');
             message.classList.add('error');
@@ -61,7 +61,7 @@ const showWentThrough = (input, successMessage) => {
             break;
         case 'message':
             message.classList.remove('error');
-            formEmailErrorSpan.classList.remove('errorClass');
+            formMessageErrorSpan.classList.remove('errorClass');
             formMessageErrorSpan.innerText = successMessage;
             formMessageErrorSpan.classList.add('verifiedClass');
             break;
@@ -99,7 +99,7 @@ const areAllFieldsValidToSend = async () => {
 
             formSubjectErrorSpan.classList.remove('verifiedClass');
             formEmailErrorSpan.classList.remove('verifiedClass');
-            formMessageErrorSpan.innerText = '';
+            formMessageErrorSpan.innerText = 'Processing.....';
 
 
             try {
@@ -111,7 +111,7 @@ const areAllFieldsValidToSend = async () => {
                 };
 
                 
-                const res = await fetch('https://amalgichevdesign.onrender.com/email', {
+                const res = await fetch(BACKEND_LINK, {
                     method: 'POST',
                     body: JSON.stringify(formData),
                     headers: {
