@@ -344,6 +344,12 @@ header {
 	flex-direction: row;
 	justify-content: start;
 	align-items: end;
+	transition: background-color 0.25s;
+	transition-delay: 0.1s;
+}
+
+header.loaded {
+	background-color: rgba(255, 255, 255, 0);
 }
 
 #headerTransparentArea {
@@ -1314,8 +1320,8 @@ header {
 
 		/* Header */
 
-		header {
-			background: rgba(255, 255, 255, 0.2);
+		header.loaded {
+			background-color: rgba(255, 255, 255, 0.2);
 		}
 
 		#headerTransparentArea {
@@ -1549,8 +1555,10 @@ header {
 		header {
 			justify-content: center;
 			align-items: center;
-			background: rgba(255, 255, 255, 0.6);
+		}
 
+		header.loaded {
+			background-color: rgba(255, 255, 255, 0.7);
 		}
 
 		#headerTransparentArea {
@@ -1764,6 +1772,7 @@ header {
 		#intro {
 			font-size: 13px;
 		}
+		
 	
 		/* About */
 
