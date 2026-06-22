@@ -89,8 +89,9 @@ mobileMenuExitButton.addEventListener('click', () => {
 // Get the gradientColor element itself.
 const animatedColor = document.getElementById('animatedColor');
 
-// Get the intro element and the header transparent div itself to do an opacity transition.
+// Get the intro element, header, and the header transparent div itself to do an opacity transition.
 const intro = document.getElementById('intro');
+const header = document.querySelector('header');
 const headerTransparentArea = document.getElementById('headerTransparentArea');
 
 // Titles that will be shown and animated.
@@ -104,9 +105,10 @@ const headerTitlesAnimationWords = [
 
 wordCycle = 0;
 
-// Make our intro appear.
+// Make our intro and header appear.
 const loadIntro = async () => {
     intro.classList.add('loaded');
+    header.classList.add('loaded');
     headerTransparentArea.classList.add('loaded');
     await document.fonts.ready;
     await delay(250);
@@ -339,13 +341,4 @@ window.addEventListener('scroll', () => {
 
 window.addEventListener('load', () => {
     handleContent();
-})
-
-
-
-
-/* -------------------------------------------- */
-// Reset the url back to main url after reload.
-if (window.location.hash) {
-    history.replaceState(null, null, window.location.pathname);
-};
+});

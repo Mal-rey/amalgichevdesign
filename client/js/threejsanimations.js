@@ -4,6 +4,15 @@ import * as CANNON from 'cannon-es';
 // Import all of our manual animation values code from our threejsmanualanimationvalues file.
 import { cameraPhases, cameraPhasesSecond, capsuleMachinePhases, capsulesPhases, starsPhases, starsSecondUsePhases } from './threejsmanualanimationvalues.js';
 /* -------------------------------------------- */
+// Reset the url back to main url after reload.
+if (window.location.hash) {
+    history.replaceState(null, null, window.location.pathname);
+};
+
+
+
+
+/* -------------------------------------------- */
 // Initalize the variables that will see if the screen size is mobile or no here.
 const mobileSize = window.matchMedia('(max-width: 991px)');
 const mobileSizeMiddleSize = window.matchMedia('(max-width: 767px)');
@@ -390,9 +399,16 @@ const createScene = (sceneId) => {
         }
     );
 
-    observer.observe(container);
+    // Observer the container to resize it.
+    const resizeObserver = new ResizeObserver(() => {
+        onWindowResize(camera, renderer, container);
+    });
+
+    resizeObserver.observe(container);
 
 
+
+    
     return {
         container, 
         scene, 
@@ -992,7 +1008,7 @@ const Scene = async(sceneId) => {
 
                 animationFrameFirst = requestAnimationFrame(animate);
             };
-
+            
             animate();
 
 
