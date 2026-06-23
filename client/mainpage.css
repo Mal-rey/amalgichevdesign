@@ -344,8 +344,6 @@ header {
 	flex-direction: row;
 	justify-content: start;
 	align-items: end;
-	transition: background-color 0.25s;
-	transition-delay: 0.1s;
 }
 
 #headerTransparentArea {
@@ -1315,6 +1313,11 @@ header {
 		}
 
 		/* Header */
+		
+		header {
+			transition: background-color 0.25s;
+			transition-delay: 0.1s;
+		}
 
 		header.loaded {
 			background-color: rgba(255, 255, 255, 0.2);
