@@ -354,7 +354,7 @@ header {
 	height: 300px;
 	background: linear-gradient(to bottom, transparent, #fff);
 	opacity: 0;
-	transition: opacity 0.25s;
+	transition: opacity 0.50s;
 	transition-delay: 0.1s;
 }
 
@@ -1313,9 +1313,9 @@ header {
 		}
 
 		/* Header */
-		
+
 		header {
-			transition: background-color 0.25s;
+			transition: background-color 0.50s;
 			transition-delay: 0.1s;
 		}
 
