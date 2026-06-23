@@ -402,11 +402,11 @@ const createScene = (sceneId) => {
     observer.observe(container);
 
     // Observer the container to resize it.
-    const resizeObserver = new ResizeObserver(() => {
+    /*const resizeObserver = new ResizeObserver(() => {
         onWindowResize(camera, renderer, container);
     });
 
-    resizeObserver.observe(container);
+    resizeObserver.observe(container);*/
 
 
 
