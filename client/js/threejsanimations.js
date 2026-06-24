@@ -439,9 +439,6 @@ const Scene = async(sceneId) => {
     // Run the scene setup from our createScene function.
 	const { container, scene, camera, renderer, clock, ambientLight, directionalLight, isVisible } = createScene(sceneId);
 
-    // Set size of scene initially.
-    onWindowResize(camera, renderer, container);
-
     // Check what div is being targeted, as each one requires different animations.
     switch(sceneId) {
         case 'threejsIntro':
@@ -1012,10 +1009,17 @@ const Scene = async(sceneId) => {
 
 
 
-            // Resize when screen changes size.
+            // Resize when screen changes size
+            const resizeObserver = new ResizeObserver(() => {
+                onWindowResize(camera, renderer, container);
+            });
+
+            resizeObserver.observe(container);
+
+            // Resize when screen changes size on resize.
 	        window.addEventListener('resize', () => {
 		        onWindowResize(camera, renderer, container);
-	        });
+            });
 
             break;
 
@@ -1358,10 +1362,17 @@ const Scene = async(sceneId) => {
 
 
 
-            // Resize when screen changes size.
+            // Resize when screen changes size
+            const resizeObserver = new ResizeObserver(() => {
+                onWindowResize(camera, renderer, container);
+            });
+
+            resizeObserver.observe(container);
+
+            // Resize when screen changes size on resize.
 	        window.addEventListener('resize', () => {
 		        onWindowResize(camera, renderer, container);
-	        });
+            });
 
             break;
 
@@ -1413,10 +1424,17 @@ const Scene = async(sceneId) => {
 
 
 
-            // Resize when screen changes size.
+            // Resize when screen changes size
+            const resizeObserver = new ResizeObserver(() => {
+                onWindowResize(camera, renderer, container);
+            });
+
+            resizeObserver.observe(container);
+
+            // Resize when screen changes size on resize.
 	        window.addEventListener('resize', () => {
 		        onWindowResize(camera, renderer, container);
-	        });
+            });
 
             break;
 
