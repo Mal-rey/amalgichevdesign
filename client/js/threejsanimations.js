@@ -401,13 +401,6 @@ const createScene = (sceneId) => {
 
     observer.observe(container);
 
-    // Observer the container to resize it.
-    /*const resizeObserver = new ResizeObserver(() => {
-        onWindowResize(camera, renderer, container);
-    });
-
-    resizeObserver.observe(container);*/
-
 
 
     
@@ -445,6 +438,9 @@ const Scene = async(sceneId) => {
 
     // Run the scene setup from our createScene function.
 	const { container, scene, camera, renderer, clock, ambientLight, directionalLight, isVisible } = createScene(sceneId);
+
+    // Set size of scene initially.
+    onWindowResize(camera, renderer, container);
 
     // Check what div is being targeted, as each one requires different animations.
     switch(sceneId) {
