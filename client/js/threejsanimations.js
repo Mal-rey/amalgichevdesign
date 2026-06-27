@@ -1012,13 +1012,6 @@ const Scene = async(sceneId) => {
 
 
 
-            // Resize when screen changes size
-            const resizeObserver = new ResizeObserver(() => {
-                onWindowResize(camera, renderer, container);
-            });
-
-            resizeObserver.observe(container);
-
             // Resize when screen changes size on resize.
 	        window.addEventListener('resize', () => {
 		        onWindowResize(camera, renderer, container);
@@ -1364,14 +1357,7 @@ const Scene = async(sceneId) => {
 
 
 
-
-            // Resize when screen changes size
-            const resizeObserverSecond = new ResizeObserver(() => {
-                onWindowResize(camera, renderer, container);
-            });
-
-            resizeObserverSecond.observe(container);
-
+     
             // Resize when screen changes size on resize.
 	        window.addEventListener('resize', () => {
 		        onWindowResize(camera, renderer, container);
@@ -1426,14 +1412,7 @@ const Scene = async(sceneId) => {
 
 
 
-
-            // Resize when screen changes size
-            const resizeObserverThird = new ResizeObserver(() => {
-                onWindowResize(camera, renderer, container);
-            });
-
-            resizeObserverThird.observe(container);
-
+        
             // Resize when screen changes size on resize.
 	        window.addEventListener('resize', () => {
 		        onWindowResize(camera, renderer, container);
