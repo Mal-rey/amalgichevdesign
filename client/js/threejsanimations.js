@@ -24,13 +24,9 @@ const mobileSizeLowestSize = window.matchMedia('(max-width: 479px)');
 
 // Resize screen function (call to this later in our 'Scene' functions for resizing when screen changes size).
 function onWindowResize(camera, renderer, container) {
-    // Should fix any observer issues for that resizing (won't change if has any 0 values).
-    if (container.clientWidth === 0 || height === 0) return;
-
-	camera.aspect = container.clientWidth / container.clientWidth;
-	renderer.setSize(container.clientWidth, container.clientHeight);
-	renderer.setPixelRatio(1);
-	camera.updateProjectionMatrix();
+    camera.aspect = container.clientWidth / container.clientHeight;
+    camera.updateProjectionMatrix();
+    renderer.setSize(container.clientWidth, container.clientHeight);
 };
 
 
@@ -1357,7 +1353,7 @@ const Scene = async(sceneId) => {
 
 
 
-     
+
             // Resize when screen changes size on resize.
 	        window.addEventListener('resize', () => {
 		        onWindowResize(camera, renderer, container);
@@ -1412,7 +1408,7 @@ const Scene = async(sceneId) => {
 
 
 
-        
+
             // Resize when screen changes size on resize.
 	        window.addEventListener('resize', () => {
 		        onWindowResize(camera, renderer, container);
