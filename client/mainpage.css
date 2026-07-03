@@ -1,31 +1,43 @@
 ﻿@font-face {
 	font-family: "PlusJakartaSansUpper";
-	src: url(fonts/PlusJakartaSans-Bold.ttf);
+	src: url('./fonts/PlusJakartaSans-Bold.woff2') format("woff2");
+	font-weight: 700;
+	font-style: normal;
 }
 
 @font-face {
 	font-family: "PlusJakartaSansReg";
-	src: url(fonts/PlusJakartaSans-Regular.ttf);
+	src: url('./fonts/PlusJakartaSans-Regular.woff2') format("woff2");
+	font-weight: 400;
+	font-style: normal;
 }
 
 @font-face {
 	font-family: "PlusJakartaSansMed";
-	src: url(fonts/PlusJakartaSans-Medium.ttf);
+	src: url('./fonts/PlusJakartaSans-Medium.woff2') format("woff2");
+	font-weight: 500;
+	font-style: normal;
 }
 
 @font-face {
 	font-family: "InstrumentSansReg";
-	src: url(fonts/InstrumentSans-Regular.ttf);
+	src: url('./fonts/InstrumentSans-Regular.woff2') format("woff2");
+	font-weight: 400;
+	font-style: normal;
 }
 
 @font-face {
 	font-family: "InstrumentSansMedItalic";
-	src: url(fonts/InstrumentSans-MediumItalic.ttf);
+	src: url('./fonts/InstrumentSans-MediumItalic.woff2') format("woff2");
+	font-weight: 500;
+	font-style: italic;
 }
 
 @font-face {
 	font-family: "InstrumentSansBold";
-	src: url(fonts/InstrumentSans-Bold.ttf);
+	src: url('./fonts/InstrumentSans-Bold.woff2') format("woff2");
+	font-weight: 700;
+	font-style: normal;
 }
 
 * {
@@ -697,7 +709,7 @@ header {
 }
 
 .experienceFlexDetails {
-	width: 500px;
+	width: 461px;
 	padding-top: 12px;
 	text-align: start;
 	display: flex;
@@ -1393,10 +1405,11 @@ header {
 		}
 
 		.experienceFlexItemDatesContent {
-			font-size: 16px;
+			font-size: 14.5px;
 		}
 
 		.experienceFlexDetails {
+			width: 315px;
 			font-size: 15.4px;
 		}
 
@@ -1591,7 +1604,7 @@ header {
 		}
 		
 		.contentDivBreakpoint {
-			width: 466.8px;
+			width: 430.8px;
 		}
 
 		.sectionHeaderText {
@@ -1620,7 +1633,7 @@ header {
 		}
 
 		#experienceSliderAreaBorder {
-			margin-right: 55px;
+			margin-right: 45px;
 			width: 60px;
 		}
 
@@ -1651,6 +1664,10 @@ header {
 			padding-left: 0px;
 			padding-top: 12px;
 			font-size: 18px;
+		}
+
+		.experienceFlexItemDatesContent {
+			font-size: 14px;
 		}
 
 		.experienceFlexDetails {
@@ -1800,14 +1817,19 @@ header {
 		/* Experience */
 
 		#experienceSliderAreaBorder {
-			margin-right: 45px;
+			margin-right: 25px;
 		}
 
 		.experienceFlexItemContent {
 			font-size: 16.5px;
 		}
 
+		.experienceFlexItemDatesContent {
+			font-size: 13.5px;
+		}
+
 		.experienceFlexDetails {
+			width: 300px;
 			font-size: 13px;
 		}
 
