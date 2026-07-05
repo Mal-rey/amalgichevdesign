@@ -1008,11 +1008,6 @@ const Scene = async(sceneId) => {
 
 
 
-            // Resize when screen changes size on resize.
-	        window.addEventListener('resize', () => {
-		        onWindowResize(camera, renderer, container);
-            });
-
             break;
 
         case 'threejsSecond':
@@ -1354,11 +1349,6 @@ const Scene = async(sceneId) => {
 
 
 
-            // Resize when screen changes size on resize.
-	        window.addEventListener('resize', () => {
-		        onWindowResize(camera, renderer, container);
-            });
-
             break;
 
         case 'threejsThird':
@@ -1409,14 +1399,17 @@ const Scene = async(sceneId) => {
 
 
 
-            // Resize when screen changes size on resize.
-	        window.addEventListener('resize', () => {
-		        onWindowResize(camera, renderer, container);
-            });
-
             break;
 
     };
+
+
+
+
+    // Resize when screen changes size on resize.
+	window.addEventListener('resize', () => {
+	    onWindowResize(camera, renderer, container);
+    });
 };
 
 
