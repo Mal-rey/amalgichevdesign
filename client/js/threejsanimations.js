@@ -517,22 +517,19 @@ const Scene = async(sceneId) => {
 
             // Phases for each type of animation.
 	        const overallAnimationPhases = {
-		        firstIntroAnimation: {
-                    status: false,
-                },
-                secondManualAnimation: {
+                firstManualAnimation: {
                     status: true,
                     capsuleMachineAnimationFinish: false,
                     starsAnimationFinish: false
                 },
-                thirdCameraCapsuleBallsAndStarsAnimation: {
+                secondCameraCapsuleBallsAndStarsAnimation: {
                     status: false,
                     cameraAnimationFinish: false,
                     supplementaryLoading1: false,
                     starsPopInFinish: false,
                     capsulesLoadedFinish: false,
                 },
-                fourthShakeStarsRotateAnimation: {
+                thirdShakeStarsRotateAnimation: {
                     status: false,
                     secondCameraAnimationFinish: false,
                     capsuleMachineJoggleSet: false,
@@ -880,41 +877,35 @@ const Scene = async(sceneId) => {
 
                 
                 // Look through the overallAnimationPhases object to see what current animation is active.
-                switch(overallAnimationPhases.firstIntroAnimation.status) {
-                    case true: 
-        
-                        break;
-            
-                };
-                switch (overallAnimationPhases.secondManualAnimation.status) {
+                switch (overallAnimationPhases.firstManualAnimation.status) {
                     case true:
                     
-                        if(!overallAnimationPhases.secondManualAnimation.capsuleMachineAnimationFinish 
-                        || !overallAnimationPhases.secondManualAnimation.starsAnimationFinish) {
+                        if(!overallAnimationPhases.firstManualAnimation.capsuleMachineAnimationFinish 
+                        || !overallAnimationPhases.firstManualAnimation.starsAnimationFinish) {
                             // Animate the manual intro animation for the capsule machine and stars.
-                            manualAnimationChange(capsuleMachinePhases, machine, overallAnimationPhases.secondManualAnimation, 'capsuleMachineAnimationFinish', delta);
-                            manualAnimationChange(starsPhases, stars, overallAnimationPhases.secondManualAnimation, 'starsAnimationFinish', delta);
+                            manualAnimationChange(capsuleMachinePhases, machine, overallAnimationPhases.firstManualAnimation, 'capsuleMachineAnimationFinish', delta);
+                            manualAnimationChange(starsPhases, stars, overallAnimationPhases.firstManualAnimation, 'starsAnimationFinish', delta);
                             
                         } else {
                             // Delete the star object array.
                             stars = null;
-                            phaseOfOverallAnimations(overallAnimationPhases.secondManualAnimation, overallAnimationPhases.thirdCameraCapsuleBallsAndStarsAnimation);
+                            phaseOfOverallAnimations(overallAnimationPhases.firstManualAnimation, overallAnimationPhases.secondCameraCapsuleBallsAndStarsAnimation);
                         };
 
                         break;
     
                 };
-                switch (overallAnimationPhases.thirdCameraCapsuleBallsAndStarsAnimation.status) {
+                switch (overallAnimationPhases.secondCameraCapsuleBallsAndStarsAnimation.status) {
                     case true:
 
-                        if(!overallAnimationPhases.thirdCameraCapsuleBallsAndStarsAnimation.cameraAnimationFinish  
-                           || !overallAnimationPhases.thirdCameraCapsuleBallsAndStarsAnimation.capsulesLoadedFinish
-                           || !overallAnimationPhases.thirdCameraCapsuleBallsAndStarsAnimation.starsPopInFinish) {
+                        if(!overallAnimationPhases.secondCameraCapsuleBallsAndStarsAnimation.cameraAnimationFinish  
+                           || !overallAnimationPhases.secondCameraCapsuleBallsAndStarsAnimation.capsulesLoadedFinish
+                           || !overallAnimationPhases.secondCameraCapsuleBallsAndStarsAnimation.starsPopInFinish) {
                             // Animate the manual camera animation.
-                            manualAnimationChange(cameraPhases, camera, overallAnimationPhases.thirdCameraCapsuleBallsAndStarsAnimation, 'cameraAnimationFinish', delta);
+                            manualAnimationChange(cameraPhases, camera, overallAnimationPhases.secondCameraCapsuleBallsAndStarsAnimation, 'cameraAnimationFinish', delta);
 
                             // Check if the camera animation phase is on the second phase so that we can add a new empty capsule machine and capsules and balls one time.
-                            if(cameraPhases.phase === 1 && !overallAnimationPhases.thirdCameraCapsuleBallsAndStarsAnimation.supplementaryLoading1) {
+                            if(cameraPhases.phase === 1 && !overallAnimationPhases.secondCameraCapsuleBallsAndStarsAnimation.supplementaryLoading1) {
                                 // Delete the prior model and re-add it in the empty varient now with the actual machine dome CANNON body.
                                 scene.remove(machine.mesh);
                                 scene.add(emptyMachine.mesh);
@@ -929,32 +920,32 @@ const Scene = async(sceneId) => {
                                 // Check the screen size to display the second set of stars or not.
                                 starDisplayChange(starsSecondUse);
 
-                                overallAnimationPhases.thirdCameraCapsuleBallsAndStarsAnimation.supplementaryLoading1 = true;
+                                overallAnimationPhases.secondCameraCapsuleBallsAndStarsAnimation.supplementaryLoading1 = true;
 
                             };
 
                             // Now, we need to do the animations that require them to be re-run in the animation loop (not run one time like in the statement above).
-                            if (overallAnimationPhases.thirdCameraCapsuleBallsAndStarsAnimation.supplementaryLoading1) {
+                            if (overallAnimationPhases.secondCameraCapsuleBallsAndStarsAnimation.supplementaryLoading1) {
                                 // Now, position everything.
-                                manualAnimationChange(capsulesPhases, capsules, overallAnimationPhases.thirdCameraCapsuleBallsAndStarsAnimation, 'capsulesLoadedFinish', delta);
+                                manualAnimationChange(capsulesPhases, capsules, overallAnimationPhases.secondCameraCapsuleBallsAndStarsAnimation, 'capsulesLoadedFinish', delta);
                                 capsules.forEach((capsule) => {
                                     capsule.setPositionForAll();
                                 });
                                 emptyMachine.setPositionForAll();
                                 // Position the second set of stars into our scene.
-                                manualAnimationChange(starsSecondUsePhases, starsSecondUse, overallAnimationPhases.thirdCameraCapsuleBallsAndStarsAnimation, 'starsPopInFinish', delta);
+                                manualAnimationChange(starsSecondUsePhases, starsSecondUse, overallAnimationPhases.secondCameraCapsuleBallsAndStarsAnimation, 'starsPopInFinish', delta);
                             };
 
                         } else {
                             // Delete the machine variable.
                             machine = null;
-                            phaseOfOverallAnimations(overallAnimationPhases.thirdCameraCapsuleBallsAndStarsAnimation, overallAnimationPhases.fourthShakeStarsRotateAnimation);
+                            phaseOfOverallAnimations(overallAnimationPhases.secondCameraCapsuleBallsAndStarsAnimation, overallAnimationPhases.thirdShakeStarsRotateAnimation);
                         };
 
                         break;
 
                 };
-                switch (overallAnimationPhases.fourthShakeStarsRotateAnimation.status) {
+                switch (overallAnimationPhases.thirdShakeStarsRotateAnimation.status) {
                     case true:
 
                          // Set up gravity for physics detection/collision/physics mesh positions so every frame these are updated.
@@ -985,13 +976,13 @@ const Scene = async(sceneId) => {
                         // Always check to see about the screen size so the stars display or not (So on the smallest screen it won't take up space and go out of the container).
                         starDisplayChange(starsSecondUse);
 
-                        if (!overallAnimationPhases.fourthShakeStarsRotateAnimation.secondCameraAnimationFinish) {
+                        if (!overallAnimationPhases.thirdShakeStarsRotateAnimation.secondCameraAnimationFinish) {
                             // Animate the camera again if it is on desktop.
                             if (!mobileSize.matches) {
-                                manualAnimationChange(cameraPhasesSecond, camera, overallAnimationPhases.fourthShakeStarsRotateAnimation, 'secondCameraAnimationFinish', delta);
+                                manualAnimationChange(cameraPhasesSecond, camera, overallAnimationPhases.thirdShakeStarsRotateAnimation, 'secondCameraAnimationFinish', delta);
                             } else {
                             // Bypass the second camera part if not on desktop size
-                            overallAnimationPhases.fourthShakeStarsRotateAnimation.secondCameraAnimationFinish = true;
+                            overallAnimationPhases.thirdShakeStarsRotateAnimation.secondCameraAnimationFinish = true;
                             };
 
                         } else {
@@ -1000,11 +991,11 @@ const Scene = async(sceneId) => {
                         };
                        
                         // Add an event listener for when the mouse is moving on the header.
-                        if (overallAnimationPhases.fourthShakeStarsRotateAnimation.secondCameraAnimationFinish && !overallAnimationPhases.fourthShakeStarsRotateAnimation.capsuleMachineJoggleSet) {
+                        if (overallAnimationPhases.thirdShakeStarsRotateAnimation.secondCameraAnimationFinish && !overallAnimationPhases.thirdShakeStarsRotateAnimation.capsuleMachineJoggleSet) {
                             const header = document.getElementById('threejsIntro');
                         };
 
-                        if (!overallAnimationPhases.fourthShakeStarsRotateAnimation.javaScriptAnimationsLoaded) {
+                        if (!overallAnimationPhases.thirdShakeStarsRotateAnimation.javaScriptAnimationsLoaded) {
                             // Create a style tag in the html code to load the jsanimations.js file.
                             const jsAnimations = document.createElement('script');
                             jsAnimations.src = 'js/jsanimations.js';
@@ -1012,7 +1003,7 @@ const Scene = async(sceneId) => {
                             // Scroll the page again.
                             document.body.style.overflowY = 'visible';
 
-                            overallAnimationPhases.fourthShakeStarsRotateAnimation.javaScriptAnimationsLoaded = true;
+                            overallAnimationPhases.thirdShakeStarsRotateAnimation.javaScriptAnimationsLoaded = true;
                         };
 
                         break;
