@@ -32,9 +32,25 @@ function onWindowResize(camera, renderer, container) {
 
 
 
+// Create our loader
+const threejsLoader = document.getElementById('threejsLoader');
+
+const loader = new THREE.LoadingManager();
+
+loader.onStart = function(url, loaded, total) {
+    threejsLoader.classList.add('loading');
+};
+
+loader.onLoad = function() {
+    threejsLoader.classList.remove('loading');
+};
+
+
+
+
 // Create our classes for each of our unique models (we will add these in our 'Scene' functions when they are needed).
 class capsuleMachine {
-    static loader = new GLTFLoader(); 
+    static loader = new GLTFLoader(loader); 
 
     constructor(scene, gravityWorld, modelLink, modelScaleYValue, physicsModelMeshName) {
         this.mesh = null;
@@ -146,7 +162,7 @@ class capsuleMachine {
 };
 
 class capsule {
-    static loader = new GLTFLoader();
+    static loader = new GLTFLoader(loader);
         constructor(scene, gravityWorld, modelLink, hasPhysicsModel) {
             this.mesh = null;
             this.body = null;
@@ -224,8 +240,8 @@ class capsule {
 };
 
 class capsuleBall {
-    static loader = new GLTFLoader();
-    static texture = new THREE.TextureLoader();
+    static loader = new GLTFLoader(loader);
+    static texture = new THREE.TextureLoader(loader);
     constructor(scene, textureLink) {
         this.mesh = null;
         this.scene = scene;
@@ -279,8 +295,8 @@ class capsuleBall {
 };
 
 class star {
-    static loader = new GLTFLoader();
-    static texture = new THREE.TextureLoader();
+    static loader = new GLTFLoader(loader);
+    static texture = new THREE.TextureLoader(loader);
     constructor(scene, modelLink) {
         this.mesh = null;
         this.starMovingTexture = null;
@@ -400,9 +416,9 @@ const createScene = (sceneId) => {
 
     observer.observe(container);
 
-
-
     
+
+
     return {
         container, 
         scene, 
