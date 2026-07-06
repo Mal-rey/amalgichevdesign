@@ -34,6 +34,7 @@ function onWindowResize(camera, renderer, container) {
 
 // Create our loader
 const threejsLoader = document.getElementById('threejsLoader');
+const threejsError = document.getElementById('threejsLoaderError');
 
 const loader = new THREE.LoadingManager();
 
@@ -44,6 +45,11 @@ loader.onStart = function(url, loaded, total) {
 loader.onLoad = function() {
     threejsLoader.classList.remove('loading');
 };
+
+loader.onError = function(url) {
+    threejsLoader.classList.remove('loading');
+    threejsError.classList.add('error');
+}
 
 
 
