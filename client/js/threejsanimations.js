@@ -32,6 +32,31 @@ function onWindowResize(camera, renderer, container) {
 
 
 
+// Phases for each type of animation in our header container.
+const overallAnimationPhases = {
+    firstManualAnimation: {
+        status: false,
+        capsuleMachineAnimationFinish: false,
+        starsAnimationFinish: false
+    },
+    secondCameraCapsuleBallsAndStarsAnimation: {
+        status: false,
+        cameraAnimationFinish: false,
+        supplementaryLoading1: false,
+        starsPopInFinish: false,
+        capsulesLoadedFinish: false,
+    },
+    thirdShakeStarsRotateAnimation: {
+        status: false,
+        secondCameraAnimationFinish: false,
+        capsuleMachineJoggleSet: false,
+        javaScriptAnimationsLoaded: false,
+    }
+};
+
+
+
+
 // Create our loader
 const threejsLoader = document.getElementById('threejsLoader');
 const threejsError = document.getElementById('threejsLoaderError');
@@ -44,6 +69,7 @@ loader.onStart = function(url, loaded, total) {
 
 loader.onLoad = function() {
     threejsLoader.classList.remove('loading');
+    overallAnimationPhases.firstManualAnimation.status = true;
 };
 
 loader.onError = function(url) {
@@ -511,31 +537,6 @@ const Scene = async(sceneId) => {
             stars.forEach((star) => {
                 scene.add(star.mesh);
             });
-
-            
-
-
-            // Phases for each type of animation.
-	        const overallAnimationPhases = {
-                firstManualAnimation: {
-                    status: true,
-                    capsuleMachineAnimationFinish: false,
-                    starsAnimationFinish: false
-                },
-                secondCameraCapsuleBallsAndStarsAnimation: {
-                    status: false,
-                    cameraAnimationFinish: false,
-                    supplementaryLoading1: false,
-                    starsPopInFinish: false,
-                    capsulesLoadedFinish: false,
-                },
-                thirdShakeStarsRotateAnimation: {
-                    status: false,
-                    secondCameraAnimationFinish: false,
-                    capsuleMachineJoggleSet: false,
-                    javaScriptAnimationsLoaded: false,
-                }
-	        };
 
     
 
