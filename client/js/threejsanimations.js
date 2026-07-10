@@ -863,11 +863,10 @@ const Scene = async(sceneId) => {
 
             
 
-            let animationFrameFirst;
             // Animation Area.
 	        function animate(time) {
+                animationFrameFirst = requestAnimationFrame(animate);
                 if (!isVisible()) {
-                    animationFrameFirst = requestAnimationFrame(animate);
                     return;
                 };
 
@@ -1050,11 +1049,10 @@ const Scene = async(sceneId) => {
 
 
 
-            let animationFrameSecond;
             // Animation Area.
 	        function animateSecond() {
+                animationFrameSecond = requestAnimationFrame(animateSecond);
                 if (!isVisible()) {
-                    animationFrameSecond = requestAnimationFrame(animateSecond);
                     return;
                 };
 
@@ -1383,10 +1381,9 @@ const Scene = async(sceneId) => {
 
             
             // Animation Area.
-            let animationFrameThird;
 	        function animateThird() {
+                requestAnimationFrame(animateThird);
                 if (!isVisible()) {
-                    animationFrameThird = requestAnimationFrame(animateThird);
                     return;
                 };
 
