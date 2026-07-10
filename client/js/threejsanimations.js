@@ -1013,7 +1013,6 @@ const Scene = async(sceneId) => {
                 // Renderer for scene.
 		        renderer.render(scene, camera);
 
-                animationFrameFirst = requestAnimationFrame(animate);
             };
             
             animate();
@@ -1353,7 +1352,6 @@ const Scene = async(sceneId) => {
                 // Renderer for scene.
 		        renderer.render(scene, camera);
 
-                animationFrameSecond = requestAnimationFrame(animateSecond);
             };
 
             animateSecond();
@@ -1402,7 +1400,6 @@ const Scene = async(sceneId) => {
                 // Renderer for scene.
 		        renderer.render(scene, camera);
 
-                animationFrameThird = requestAnimationFrame(animateThird);
             };
 
             animateThird();
