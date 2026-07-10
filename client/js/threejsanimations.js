@@ -865,7 +865,7 @@ const Scene = async(sceneId) => {
 
             // Animation Area.
 	        function animate(time) {
-                animationFrameFirst = requestAnimationFrame(animate);
+                requestAnimationFrame(animate);
                 if (!isVisible()) {
                     return;
                 };
@@ -1050,7 +1050,7 @@ const Scene = async(sceneId) => {
 
             // Animation Area.
 	        function animateSecond() {
-                animationFrameSecond = requestAnimationFrame(animateSecond);
+                requestAnimationFrame(animateSecond);
                 if (!isVisible()) {
                     return;
                 };
