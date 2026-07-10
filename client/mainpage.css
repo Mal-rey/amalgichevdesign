@@ -504,7 +504,7 @@ header {
 }
 
 #about {
-	width: 727px;
+	width: 689px;
 	display: flex;
 	flex-direction: row;
 	justify-content: space-evenly;
@@ -619,7 +619,7 @@ header {
 .sectionIntroText {
 	color: rgba(62, 47, 91);
 	font-family: "PlusJakartaSansMed";
-	font-size: 60px;
+	font-size: 58px;
 }
 
 .sectionContentText {
