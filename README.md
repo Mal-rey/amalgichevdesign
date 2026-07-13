@@ -37,15 +37,59 @@ the necessary employable technical skills displayed by the creator. The tech sta
 # Tech Stack Used...
 </br>
 
-* Frontend.
+**Frontend:** HTML5, CSS3, and JavaScript.
 
 </br>
 
-* Backend.
+**Backend:** Node.js and Express.js.
   
 </br>
 
-* Hosting.
+**Hosting:** Netlify.
+
+</br>
+
+---
+
+</br>
+
+<picture><img src="https://github.com/user-attachments/assets/6a5ca546-b1e3-41dd-9678-2cdf9fbbde3b" width="130" /></picture> 
+# Live Demo...
+</br>
+
+[amalgichevdesign.com](https://amalgichevdesign.com "amalgichevdesign")
+
+</br>
+
+---
+
+</br>
+
+<picture><img src="https://github.com/user-attachments/assets/6a5ca546-b1e3-41dd-9678-2cdf9fbbde3b" width="130" /></picture> 
+# How To Run Locally...
+</br>
+
+[amalgichevdesign.com](https://amalgichevdesign.com "amalgichevdesign")
+
+</br>
+
+---
+
+</br>
+
+<picture><img src="https://github.com/user-attachments/assets/6a5ca546-b1e3-41dd-9678-2cdf9fbbde3b" width="130" /></picture> 
+# Contact...
+</br>
+
+**Email:** amalgichev12@gmail.com
+
+</br>
+
+**Phone Number:** 203-979-4734
+  
+</br>
+
+**LinkedIn:** [https://www.linkedin.com/in/am-97as/](https://www.linkedin.com/in/am-97as/ "Andrey Malgichev LinkedIn")
 
 </br>
 
