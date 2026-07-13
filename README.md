@@ -69,7 +69,35 @@ the necessary employable technical skills displayed by the creator. The tech sta
 # How To Run Locally...
 </br>
 
-[amalgichevdesign.com](https://amalgichevdesign.com "amalgichevdesign")
+1. Clone the repository via the terminal you are using.
+```bash
+git clone https://github.com/Mal-rey/amalgichevdesign.git
+```
+
+2. Navigate into the folder.
+```bash
+cd amalgichevdesign
+```
+
+3. Navigate into the client folder.
+```bash
+cd client
+```
+
+4. Run a dev server using Serve.
+```bash
+npx serve .
+```
+
+5. Open another terminal navigated to the amalgichevdesign folder and navigate into the server folder.
+```bash
+cd server
+```
+
+6. Run the server.
+```bash
+node server
+```
 
 </br>
 
