@@ -94,7 +94,12 @@ npx serve .
 cd server
 ```
 
-6. Run the server.
+6. Install all dependencies needed on the server end.
+```bash
+npm install
+```
+
+7. Run the server.
 ```bash
 node server
 ```
