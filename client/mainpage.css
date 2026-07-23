@@ -94,6 +94,14 @@ canvas {
 	z-index: -1;
 }
 
+#about,
+#experience,
+#skills, 
+#projects,
+#contacts {
+	scroll-margin-top: 29vh;
+}
+
 
 
 /* Nav Menu */
@@ -1312,6 +1320,15 @@ header {
 /* Responsive Sizing */
 
 @media only screen and (max-width: 991px) {
+
+		#about,
+		#experience,
+		#skills, 
+		#projects,
+		#contacts {
+			scroll-margin-top: 31vh;
+		}
+
 		/* Navbar */
 
 		#navPageDesktop {
@@ -1591,6 +1608,18 @@ header {
 }
 
 @media only screen and (max-width: 767px) {
+
+		#about {
+			scroll-margin-top: 27vh;
+		}
+
+		#experience,
+		#skills, 
+		#projects,
+		#contacts {
+			scroll-margin-top: 30vh;
+		}
+
 		/* Navbar */
 
 		.topNavButtonMobile {
@@ -1822,6 +1851,19 @@ header {
 }
 
 @media only screen and (max-width: 479px) {
+
+		#about {
+			scroll-margin-top: 25vh;
+		}
+
+		#experience,
+		#skills, 
+		#projects,
+		#contacts {
+			scroll-margin-top: 32vh;
+		}
+
+
 		/* Navbar */
 
 		#navMobileMenu {
