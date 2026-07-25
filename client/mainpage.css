@@ -723,13 +723,11 @@ header {
 	flex-direction: row;
 	align-items: center;
 	opacity: 0.3;
-	top: 25px;
 	transition: all 1s;
 }
 
 .experienceFlexItem.contentLoaded {
 	opacity: 1;
-	top: 0;
 }
 
 .experienceFlexImage {
@@ -809,13 +807,11 @@ header {
 	align-items: center;
 	justify-content: space-between;
 	opacity: 0.3;
-	top: 25px;
 	transition: all 1s;
 }
 
 .skillsSoftwareItemSizing.contentLoaded {
 	opacity: 1;
-	top: 0px;
 }
 
 .skillsSoftwareItemBorder {
@@ -938,7 +934,6 @@ header {
 		linear-gradient(-95deg, rgb(179, 73, 150), rgb(227, 172, 57)) border-box;
 	border-image-slice: 1;
 	opacity: 0.3;
-	top: 25px;
 	transition: all 0.5s;
 }
 
@@ -949,7 +944,6 @@ header {
 
 .projectsItemSizing.contentLoaded {
 	opacity: 1;
-	top: 0;
 }
 
 .projectsItemSizing.projectClicked {
@@ -1617,7 +1611,7 @@ header {
 		#skills, 
 		#projects,
 		#contacts {
-			scroll-margin-top: 30vh;
+			scroll-margin-top: 33vh;
 		}
 
 		/* Navbar */
@@ -1860,7 +1854,7 @@ header {
 		#skills, 
 		#projects,
 		#contacts {
-			scroll-margin-top: 32vh;
+			scroll-margin-top: 35vh;
 		}
 
 
