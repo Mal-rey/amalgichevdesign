@@ -1302,8 +1302,8 @@ header {
 
 .contactsImage {
 	opacity: 100%;
-	height: auto;
-	width: max-content;
+	height: 43px;
+	width: 43px;
 	transition: all .2s;
 }
 
@@ -1846,7 +1846,8 @@ header {
 			text-align: center;
 		}
 
-		a {
+		a,
+		.contactsImage {
 			width: 33px;
 			height: 33px;
 		}
