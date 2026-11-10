@@ -2,6 +2,7 @@
 <picture><img src="https://github.com/user-attachments/assets/6a5ca546-b1e3-41dd-9678-2cdf9fbbde3b" width="130" /></picture> 
 # Project Details 
 </br>
+
 amalgichevdesign is a custom coded and designed website portfolio that displays projects related to Web Development and UI/UX Design, built to highlight
 the necessary employable technical skills displayed by the creator. The tech stack for the website is HTML, CSS, JavaScript, Three.js alongside Cannon-es physics, Node.js, and Express.js.
 
