@@ -7,6 +7,8 @@ the necessary employable technical skills displayed by the creator. The tech sta
 
 </br>
 
+</br>
+
 <picture><img src="https://github.com/user-attachments/assets/6a5ca546-b1e3-41dd-9678-2cdf9fbbde3b" width="130" /></picture> 
 # Features Included
 </br>
