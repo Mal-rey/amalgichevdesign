@@ -37,7 +37,7 @@ the necessary employable technical skills displayed by the creator. The tech sta
 # Tech Stack Used
 </br>
 
-HTML5, CSS3, JavaScript, Node.js, Express.js, and Netlify.
+HTML5, CSS3, JavaScript, Three.js, Node.js, Express.js, and Netlify.
 
 </br>
 
