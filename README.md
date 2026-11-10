@@ -5,8 +5,6 @@
 amalgichevdesign is a custom coded and designed website portfolio that displays projects related to Web Development and UI/UX Design, built to highlight
 the necessary employable technical skills displayed by the creator. The tech stack for the website is HTML, CSS, JavaScript, Three.js alongside Cannon-es physics, Node.js, and Express.js.
 
----
-
 </br>
 
 <picture><img src="https://github.com/user-attachments/assets/6a5ca546-b1e3-41dd-9678-2cdf9fbbde3b" width="130" /></picture> 
@@ -29,8 +27,6 @@ the necessary employable technical skills displayed by the creator. The tech sta
 
 </br>
 
----
-
 </br>
 
 <picture><img src="https://github.com/user-attachments/assets/6a5ca546-b1e3-41dd-9678-2cdf9fbbde3b" width="130" /></picture> 
@@ -52,8 +48,6 @@ HTML5, CSS3, JavaScript, Three.js, Node.js, Express.js, and Netlify.
 [amalgichevdesign.com](https://amalgichevdesign.com "amalgichevdesign")
 
 </br>
-
----
 
 </br>
 
@@ -98,8 +92,6 @@ node server
 
 </br>
 
----
-
 </br>
 
 <picture><img src="https://github.com/user-attachments/assets/6a5ca546-b1e3-41dd-9678-2cdf9fbbde3b" width="130" /></picture> 
@@ -117,7 +109,5 @@ node server
 **LinkedIn:** [https://www.linkedin.com/in/am-97as/](https://www.linkedin.com/in/am-97as/ "Andrey Malgichev LinkedIn")
 
 </br>
-
----
 
 </br>
