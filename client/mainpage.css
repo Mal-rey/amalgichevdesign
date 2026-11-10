@@ -99,7 +99,7 @@ canvas {
 #skills, 
 #projects,
 #contacts {
-	scroll-margin-top: 29vh;
+	scroll-margin-top: 30.5vh;
 }
 
 
@@ -371,7 +371,7 @@ header {
 	left: 0;
 	bottom: -5px;
 	width: 100%;
-	height: 300px;
+	height: 370px;
 	background: linear-gradient(to bottom, transparent, #fff);
 	opacity: 0;
 	transition: opacity 0.50s;
@@ -403,7 +403,7 @@ header {
 #threejsLoaderError {
 	visibility: hidden;
 	position: absolute;
-	width: 250px;
+	width: 300px;
 	height: auto;
 	left: 50%;
 	top: 50%;
@@ -632,7 +632,7 @@ header {
 
 .sectionContentText {
 	padding-top: 10px;
-	width: 742.5px;
+	width: 759.07px;
 	color: rgba(62, 47, 91);
 	font-family: "InstrumentSansReg";
 	font-size: 22px;
@@ -919,7 +919,7 @@ header {
 	position: relative;
 	width: 970px;
 	height: 190px;
-	padding: 30px 30px;
+	padding: 30px;
 	border-radius: 30px;
 	display: flex;
 	flex-direction: column;
@@ -981,7 +981,7 @@ header {
 }
 
 .projectsProjectIntro {
-	width: 340px;
+	width: 336px;
 	display: flex;
 	flex-direction: column;
 	align-items: start;
@@ -1314,6 +1314,703 @@ header {
 
 /* Responsive Sizing */
 
+@media only screen and (min-width: 1920px) {
+
+		/* Navbar */
+
+		#homeButton {
+			width: 120px;
+			height: 120px;
+		}
+
+		.topNavButton {
+			width: 191px;
+			height: 75px;
+		}
+
+		.topNavButton::after {
+			width: 175px;
+			height: 59px;
+		}
+
+		.buttonConstSize {
+			font-size: 21.5px;
+		}
+
+
+		/* Header */
+
+		#intro {
+			font-size: 52px;
+		}
+
+		/* About */
+
+		.middleContentSizing {
+			height: 1510px;
+		}
+
+		#about {
+			width: 859.22px;
+			column-gap: 31px;
+		}
+
+		#aboutImage {
+			padding: 80px;
+			box-shadow: 20px 20px 20px rgba(62, 47, 91, .5);
+		}
+
+		#aboutImageHover:hover #aboutImage {
+			top: -28px;
+		}
+		
+		.contentDivBreakpoint {
+			width: 1128.7px;
+		}
+
+		.sectionIntroTextLayout {
+			padding: 10px 0;
+		}
+
+		.sectionHeaderText {
+			font-size: 43px;
+		}
+
+		.sectionIntroText {
+			font-size: 72.8px;
+		}
+
+		.sectionContentText {
+			padding: 11px 0;
+			width: 945.38px;
+			font-size: 27.4px;
+		}
+
+		/* Experience */
+
+		.alignBottomContent {
+			margin-top: 57.5px;
+			margin-bottom: 57.5px;
+		}
+
+		#experienceSliderAreaBorder {
+			margin-right: 77px;
+			width: 75px;
+			border-radius: 50px;
+		}
+
+		#experienceSliderAreaBorder::before {
+			padding: 15px;
+		}
+
+		#experienceSliderAnimation {
+			margin: 45px 16px;
+			padding: 18.5px;
+		}
+
+		.experienceFlexItem {
+			margin: 80px 0;
+		}
+
+		.experienceFlexImage {
+			width: 187px;
+			padding: 12px;
+			border-width: 11.5px;
+		}
+
+		.experienceFlexItemContent {
+			padding-left: 77px;
+			font-size: 27.5px;
+		}
+
+		.experienceFlexItemDatesContent {
+			font-size: 22.5px;
+		}
+
+		.experienceFlexDetails {
+			width: 575px;
+			padding-top: 14px;
+			font-size: 19.9px;
+		}
+
+		/* Skills */
+
+		#skillsSoftwareGrid {
+			column-gap: 44px;
+			row-gap: 44px;
+			grid-template-columns: repeat(3, 375px);
+		}
+
+		.skillsSoftwareItemBorder {
+			padding: 15.45px;
+			border-radius: 35px;
+		}
+
+		.skillsSoftwareItemSizing {
+			height: 535px;
+			padding: 55px 0px;
+		}
+
+		.skillsSoftwareItemTopContent {
+			width: 300px;
+		}
+
+		.contentDivBreakpointSkills {
+			margin: 14px 0;
+			width: 286px;
+		}
+
+		.skillsSoftwareItemDetails {
+			padding-top: 12px;
+    		font-size: 20px;
+		}
+
+		.skillsSoftwareItemTopHeader {
+			font-size: 18.7px;
+		}
+
+		.skillsSoftwareItemContent {
+			font-size: 23.7px;
+		}
+
+		.skillsSoftwareItemGrid {
+			width: 280px;
+			grid-template-columns: repeat(4, 63px);
+			column-gap: 12px;
+			row-gap: 12px;
+		}
+
+		.skillsSoftwareItemTechImage {
+			height: 63px;
+		}
+
+		/* Projects */
+
+		.projectsItemSizing {
+			width: 1215px;
+			height: 245px;
+			padding: 42px; 
+			border-radius: 40px;
+			border: 15.45px solid transparent;
+		}
+
+		.projectsItemSizing.noJS {
+			height: 368.55px;
+		}
+
+		.projectsItemSizing.projectClicked {
+			height: 932.44px;
+		}
+
+		.projectsIntroSection {
+			justify-content: space-between;
+		}
+
+		.projectsProjectImage {
+			height: auto;
+			width: 300px;
+			padding: 0 6px;
+		}
+
+		.contentDivBreakpointProjects {
+			height: 125px;
+		}
+
+		.projectsProjectIntro {
+			width: 385px;
+			justify-content: start;
+			padding: 0 0px;
+		}
+
+		.projectsProjectDetails {
+			width: 315px;
+			padding: 0px 0px;
+		}
+
+		.projectsSoftwareItemTopHeader {
+			font-size: 17.7px;
+		}
+
+		.projectNameAndLogo {
+			margin-bottom: 7.5px;
+		}
+
+		.projectsSoftwareItemTechImageIntro {
+			height: 45px;
+			width: 45px;
+		}
+
+		.projectsProjectItemContent {
+			font-size: 23.7px;
+		}
+
+		.projectsProjectStackContent {
+			height: 45px;
+			column-gap: 12.5px;
+		}
+
+		.projectsSoftwareItemTechImage {
+			height: 29.5px;
+			width: 29.5px;
+		}
+
+		.projectsSoftwareItemTechImage::after {
+			height: 29.5px;
+			width: 29.5px;
+		}
+
+		.projectsProjectItemDetails {
+			font-size: 20px;
+		}
+
+		.projectsImageGrid {
+			grid-template-columns: repeat(2, 500px);
+			column-gap: 42px;
+			row-gap: 42px;
+		}
+
+		.projectsImage {
+			border-radius: 35px;
+			border-width: 5px;
+		}
+
+		.projectsButtonsColumn {
+			padding-top: 55px;
+			column-gap: 13px;
+		}
+
+		.projectsButtons {
+			border-radius: 12px;
+			width: 438px;
+			height: 56px;
+			font-size: 16px;
+		}
+
+		.projectArrow {
+			width: 38px;
+			height: 38px;
+			bottom: 7px;
+		}
+
+		/* Contacts */
+
+		#threejsThird {
+			width: 500px;
+			height: 500px;
+		}
+
+		.contactsLabelFont {
+			font-size: 21.5px;
+		}
+
+		.contactFormPadding {
+			padding-top: 14px;
+		}
+
+		.contactFormInput {
+			width: 478px;
+			padding: 11px;
+			border-radius: 13px;
+		}
+
+		input, textarea {
+			font-size: 20px;
+		}
+
+		::placeholder {
+			font-size: 17px;
+		}
+
+		.contactFormTextarea {
+			width: 535px;
+			height: 160px;
+		}
+
+		.contactsButtonsColumn {
+			padding-top: 7px;
+		}
+
+		#contactsButtonsContent {
+			padding: 72px 0;
+			column-gap: 48px;
+		}
+
+		.contactsImage {
+			width: 54px;
+			height: 54px;
+		}
+
+		.contactsFormButtons {
+			/* padding: 13px 39px; */
+			height: 55px;
+			width: 258px;
+			font-size: 16px;
+		}
+		
+		#contactFormInput_NoSubjectValueError, 
+		#contactFormInput_NoEmailValueError, 
+		#contactFormInput_NoMessageValueError {
+			padding: 8.5px 0;
+			font-size: 17.5px;
+		}
+
+		.contactFormInput:focus {
+			box-shadow: inset 0 0 5px 2px rgba(179, 73, 150), inset 0 0 3px 2px rgba(227, 172, 57);
+		}
+
+		.contactFormInput.error {
+			box-shadow: inset 0 0 5px 2px rgba(179, 73, 150), inset 0 0 3px 2px rgba(227, 172, 57);
+		}
+}
+
+@media only screen and (min-width: 1440px) and (max-width: 1919.98px) {
+
+		/* Navbar */
+
+		#homeButton {
+			width: 110px;
+			height: 110px;
+		}
+
+		.topNavButton {
+			width: 164px;
+			height: 63px;
+		}
+
+		.topNavButton::after {
+			width: 150.5px;
+			height: 49.5px;
+		}
+
+		.buttonConstSize {
+			font-size: 19px;
+		}
+
+		/* Header */		
+
+		#intro {
+			font-size: 48.6666666px;
+		}
+
+		/* About */
+
+		.middleContentSizing {
+			height: 1355px;
+		}
+
+		#about {
+			width: 773.89px;
+			column-gap: 28.5px;
+		}
+
+		#aboutImage {
+			padding: 72.5px;
+			box-shadow: 17.5px 17.5px 17.5px rgba(62, 47, 91, .5);
+		}
+
+		#aboutImageHover:hover #aboutImage {
+			top: -26px;
+		}
+		
+		.contentDivBreakpoint {
+			width: 1014.35px;
+		}
+
+		.sectionIntroTextLayout {
+			padding: 8.5px 0;
+		}
+
+		.sectionHeaderText {
+			font-size: 39px;
+		}
+
+		.sectionIntroText {
+			font-size: 65.4px;
+		}
+
+		.sectionContentText {
+			width: 823.29684px;
+			font-size: 23.5px;
+		}
+
+		/* Experience */
+
+		.alignBottomContent {
+			margin-top: 51.5px;
+			margin-bottom: 51.5px;
+		}
+
+		#experienceSliderAreaBorder {
+			margin-right: 69px;
+			width: 67.5px;
+			border-radius: 40px;
+		}
+
+		#experienceSliderAreaBorder::before {
+			padding: 13.5px;
+		}
+
+		#experienceSliderAnimation {
+			margin: 40px 15.5px;
+			padding: 16.75px;
+		}
+
+		.experienceFlexItem {
+			margin: 73px 0;
+		}
+
+		.experienceFlexImage {
+			width: 169px;
+			padding: 11px;
+			border-width: 10.5px;
+		}
+
+		.experienceFlexItemContent {
+			padding-left: 69px;
+			font-size: 24.75px;
+		}
+
+		.experienceFlexItemDatesContent {
+			font-size: 20.25px;
+		}
+
+		.experienceFlexDetails {
+			width: 518px;
+			padding-top: 13px;
+			font-size: 17.95px;
+		}
+
+		/* Skills */
+
+		#skillsSoftwareGrid {
+			column-gap: 39.5px;
+			row-gap: 39.5px;
+			grid-template-columns: repeat(3, 337.5px);
+		}
+
+		.skillsSoftwareItemBorder {
+			padding: 13.725px;
+			border-radius: 32.5px;
+		}
+
+		.skillsSoftwareItemSizing {
+			height: 482.5px;
+			padding: 50px 0px;
+		}
+
+		.skillsSoftwareItemTopContent {
+			width: 270px;
+		}
+
+		.contentDivBreakpointSkills {
+			margin: 13px 0;
+			width: 258px;
+		}
+
+		.skillsSoftwareItemDetails {
+			padding-top: 11px;
+    		font-size: 18px;
+		}
+
+		.skillsSoftwareItemTopHeader {
+			font-size: 16.85px;
+		}
+
+		.skillsSoftwareItemContent {
+			font-size: 21.35px;
+		}
+
+		.skillsSoftwareItemGrid {
+			width: 265px;
+			grid-template-columns: repeat(4, 56.5px);
+			column-gap: 11px;
+			row-gap: 11px;
+		}
+
+		.skillsSoftwareItemTechImage {
+			height: 56.5px;
+		}
+
+		/* Projects */
+
+		.projectsItemSizing {
+			width: 1092.5px;
+			height: 217.5px;
+			padding: 36px; 
+			border-radius: 35px;
+			border: 13.725px solid transparent;
+		}
+
+		.projectsItemSizing.noJS {
+			height: 329.275px;
+		}
+
+		.projectsItemSizing.projectClicked {
+			height: 843.92px;
+		}
+
+		.projectsIntroSection {
+			justify-content: space-between;
+		}
+
+		.projectsProjectImage {
+			height: auto;
+			width: 280px;
+			padding: 0 10.5px;
+		}
+
+		.contentDivBreakpointProjects {
+			height: 112.5px;
+		}
+
+		.projectsProjectIntro {
+			width: 360.5px;
+			justify-content: start;
+			padding: 0 7.5px;
+		}
+
+		.projectsProjectDetails {
+			width: 297.5px;
+			padding: 0px 7.5px;
+		}
+
+		.projectsSoftwareItemTopHeader {
+			font-size: 15.85px;
+		}
+
+		.projectNameAndLogo {
+			margin-bottom: 6.75px;
+		}
+
+		.projectsSoftwareItemTechImageIntro {
+			height: 40px;
+			width: 40px;
+		}
+
+		.projectsProjectItemContent {
+			font-size: 21.35px;
+		}
+
+		.projectsProjectStackContent {
+			height: 40px;
+			column-gap: 11.25px;
+		}
+
+		.projectsSoftwareItemTechImage {
+			height: 26.25px;
+			width: 26.25px;
+		}
+
+		.projectsSoftwareItemTechImage::after {
+			height: 26.25px;
+			width: 26.25px;
+		}
+
+		.projectsProjectItemDetails {
+			font-size: 18px;
+		}
+
+		.projectsImageGrid {
+			grid-template-columns: repeat(2, 
+			450px);
+			column-gap: 38.5px;
+			row-gap: 38.5px;
+		}
+
+		.projectsImage {
+			border-radius: 32.5px;
+			border-width: 4.5px;
+		}
+
+		.projectsButtonsColumn {
+			padding-top: 47.5px;
+			column-gap: 11.5px;
+		}
+
+		.projectsButtons {
+			border-radius: 11px;
+			width: 394px;
+			height: 50.5px;
+			font-size: 14.5px;
+		}
+
+		.projectArrow {
+			width: 34px;
+			height: 34px;
+			bottom: 6px;
+		}
+
+		/* Contacts */
+
+		#threejsThird {
+			width: 450px;
+			height: 450px;
+		}
+
+		.contactsLabelFont {
+			font-size: 19.25px;
+		}
+
+		.contactFormPadding {
+			padding-top: 13px;
+		}
+
+		.contactFormInput {
+			width: 429px;
+			padding: 10px;
+			border-radius: 11.5px;
+		}
+
+		input, textarea {
+			font-size: 18px;
+		}
+
+		::placeholder {
+			font-size: 15.5px;
+		}
+
+		.contactFormTextarea {
+			width: 482.5px;
+			height: 145px;
+		}
+
+		.contactsButtonsColumn {
+			padding-top: 6.5px;
+		}
+
+		#contactsButtonsContent {
+			padding: 61px 0;
+			column-gap: 39px;
+		}
+
+		.contactsImage {
+			width: 48.5px;
+			height: 48.5px;
+		}
+
+		.contactsFormButtons {
+			/* padding: 13px 39px; */
+			height: 50px;
+			width: max-content;
+			font-size: 14.5px;
+		}
+		
+		#contactFormInput_NoSubjectValueError, 
+		#contactFormInput_NoEmailValueError, 
+		#contactFormInput_NoMessageValueError {
+			padding: 7.25px 0;
+			font-size: 15.75px;
+		}
+
+		.contactFormInput:focus {
+			box-shadow: inset 0 0 4px 2px rgba(179, 73, 150), inset 0 0 3px 2px rgba(227, 172, 57);
+		}
+
+		.contactFormInput.error {
+			box-shadow: inset 0 0 4px 2px rgba(179, 73, 150), inset 0 0 3px 2px rgba(227, 172, 57);
+		}
+}
+
 @media only screen and (max-width: 991px) {
 
 		#about,
@@ -1321,7 +2018,7 @@ header {
 		#skills, 
 		#projects,
 		#contacts {
-			scroll-margin-top: 31vh;
+			scroll-margin-top: 34.5vh;
 		}
 
 		/* Navbar */
@@ -1431,7 +2128,7 @@ header {
 		}
 
 		.sectionContentText {
-			width: 521.2px;
+			width: 531.35px;
 			font-size: 15.4px;
 		}
 
@@ -1605,14 +2302,14 @@ header {
 @media only screen and (max-width: 767px) {
 
 		#about {
-			scroll-margin-top: 27vh;
+			scroll-margin-top: 28vh;
 		}
 
 		#experience,
 		#skills, 
 		#projects,
 		#contacts {
-			scroll-margin-top: 33vh;
+			scroll-margin-top: 37vh;
 		}
 
 		/* Navbar */
@@ -1855,17 +2552,12 @@ header {
 
 @media only screen and (max-width: 479px) {
 
-		#about {
-			scroll-margin-top: 25vh;
-		}
-
 		#experience,
 		#skills, 
 		#projects,
 		#contacts {
-			scroll-margin-top: 36vh;
+			scroll-margin-top: 39vh;
 		}
-
 
 		/* Navbar */
 
