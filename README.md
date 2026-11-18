@@ -19,11 +19,11 @@ the necessary employable technical skills displayed by the creator. The tech sta
 
 - Clean UI/UX design with various interactive elements that shows dynamic function.
 </br>
+
 - Links to other projects to showcase technical knowledge related to web development.
-
 </br>
-- Sections about the creator, experience, skills, projects and contact information.
 
+- Sections about the creator, experience, skills, projects and contact information.
 </br>
 
 </br>
