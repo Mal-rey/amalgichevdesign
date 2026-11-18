@@ -15,10 +15,9 @@ the necessary employable technical skills displayed by the creator. The tech sta
 </br> 
 
 - Fully designed to be responsive for all screen sizes and to function with JavaScript turned off.
-
 </br>
-- Clean UI/UX design with various interactive elements that shows dynamic function.
 
+- Clean UI/UX design with various interactive elements that shows dynamic function.
 </br>
 - Links to other projects to showcase technical knowledge related to web development.
 
