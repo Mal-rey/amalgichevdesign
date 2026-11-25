@@ -57,32 +57,34 @@ HTML5, CSS3, JavaScript, Three.js, Node.js, Express.js, and Netlify.
 git clone https://github.com/Mal-rey/amalgichevdesign.git
 ```
 
-2. Navigate into the folder.
+2. Install Node.js on your system.
+
+3. Navigate into the folder.
 ```bash
 cd amalgichevdesign
 ```
 
-3. Navigate into the client folder.
+4. Navigate into the client folder.
 ```bash
 cd client
 ```
 
-4. Open another terminal navigated to the amalgichevdesign folder and navigate into the server folder.
+5. Open another terminal navigated to the amalgichevdesign folder and navigate into the server folder.
 ```bash
 cd server
 ```
 
-5. Install all dependencies needed on the server end/terminal navigating to the server.
+6. Install all dependencies needed on the server end/terminal navigating to the server.
 ```bash
 npm install
 ```
 
-6. Run the server as well.
+7. Run the server as well.
 ```bash
 node server
 ```
 
-7. Run a dev server using Serve back on the terminal navigating to the client folder.
+8. Run a dev server using Serve back on the terminal navigating to the client folder.
 ```bash
 npx serve .
 ```
