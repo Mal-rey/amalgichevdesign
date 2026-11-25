@@ -67,24 +67,24 @@ cd amalgichevdesign
 cd client
 ```
 
-4. Run a dev server using Serve.
-```bash
-npx serve .
-```
-
-5. Open another terminal navigated to the amalgichevdesign folder and navigate into the server folder.
+4. Open another terminal navigated to the amalgichevdesign folder and navigate into the server folder.
 ```bash
 cd server
 ```
 
-6. Install all dependencies needed on the server end.
+5. Install all dependencies needed on the server end/terminal navigating to the server.
 ```bash
 npm install
 ```
 
-7. Run the server.
+6. Run the server as well.
 ```bash
 node server
+```
+
+7. Run a dev server using Serve back on the terminal navigating to the client folder.
+```bash
+npx serve .
 ```
 
 </br>
